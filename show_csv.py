@@ -2,5 +2,6 @@
 from numpy import genfromtxt
 import imageio
 
-my_data = genfromtxt("pliki_csv/108.csv", delimiter=";")
+nazwa_pliku = 100
+my_data = genfromtxt("pliki_csv/" + str(nazwa_pliku) + ".csv", delimiter=";")
 imageio.imwrite("obraz_csv/outfile.jpg", my_data)

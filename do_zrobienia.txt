@@ -1,1 +1,3 @@
-- stworzenie funkcji przetwarzającej dygnał (żeby to lepiej wyglądało)
+- poprawienie dokładności preprocesingu, by lepiej znajdował wzniesienia,
+najlepiej by wykożystywał adnotacje a nie sam szukał, chociaż takie wyszukiwanie też
+się przyda np. jak będzie się chciało wykożystać sygnał z innej bazy, bez adnotacji
