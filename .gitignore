@@ -133,3 +133,6 @@ mit-bih/
 
 # Pliki z danymi przetworzonymi
 pliki_csv/
+
+# Obrazy do sprawdzania czy dobrze wyszukały się wzniesienia.
+obraz_csv/

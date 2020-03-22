@@ -1,0 +1,1 @@
+- stworzenie funkcji przetwarzającej dygnał (żeby to lepiej wyglądało)
