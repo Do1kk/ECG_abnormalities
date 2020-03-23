@@ -1,5 +1,4 @@
 import wfdb
-from wfdb import processing
 import numpy as np
 import csv
 
@@ -7,10 +6,11 @@ import csv
 # Odczytanie pierwszego kanału (są dwa) i preprocesing.
 def preprocessing(nazwa_pliku):
     sig, fields = wfdb.rdsamp(katalog_sygnalow + nazwa_pliku, channels=[0])
-    xqrs = processing.XQRS(sig=sig[:, 0], fs=fields["fs"])
-    xqrs.detect()
-    wzniesienia = xqrs.qrs_inds
     signal = np.concatenate(sig.tolist(), axis=0)
+
+    ann_ref = wfdb.rdann(katalog_sygnalow + nazwa_pliku, "atr")
+    wzniesienia = ann_ref.sample
+    symbole = ann_ref.symbol  # Symobole adnotacji.
 
     return wzniesienia, signal
 
@@ -23,8 +23,9 @@ def tworzenie_csv(nazwa_pliku, wzniesienia, signal):
         )
         Lside = int(zakres_wyc / 2)
         Rside = int(zakres_wyc / 2)
-        # Zapisanie wyszukanych wzniesień bez pierwszego i ostatniego.
-        for i in wzniesienia[1:-1]:
+        # Zapisanie wyszukanych wzniesień bez 2 pierwszych i 2 ostatnich.
+        print(f"Zapisywanie danych do pliku {nazwa_pliku}.csv")
+        for i in wzniesienia[2:-2]:
             wpisywanie.writerow(signal[i - Lside : i + Rside])
 
 
@@ -38,3 +39,6 @@ with open(plik_nazw) as plik:
         nr_pliku = str(linia.strip())
         wzniesienia, signal = preprocessing(nr_pliku)
         tworzenie_csv(nr_pliku, wzniesienia, signal)
+
+        # print(f"sygnal shape: {signal.shape}")
+        # print(f"wzniesienia shape: {wzniesienia.shape}")

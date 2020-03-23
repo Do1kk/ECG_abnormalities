@@ -1,3 +1,15 @@
 - poprawienie dokładności preprocesingu, by lepiej znajdował wzniesienia,
 najlepiej by wykożystywał adnotacje a nie sam szukał, chociaż takie wyszukiwanie też
 się przyda np. jak będzie się chciało wykożystać sygnał z innej bazy, bez adnotacji
+
+- poczytać o arytmii, czy na pewno w taki sposób można wyszukać wadę, tzn. czy można 
+zrobić to patrząc tylko na zbiór wycinków, nie przetwarzając sygnału w całości
+
+##########################################################
+- może zrobić bez rozróżnienia dobrych wzniesień bo przecież i te złe wzniesienia są ważne,
+a dopiero na samym końcu wywalić te co są błędne (błęd aparatury)
+
+- zamiana ciągłego kodu na tak z użyciem funkcji, lepiej zmieniać i lepiej wygląda
+
+- stworzenie programu który pokazuje stworzone pliki .csv jako obrazy,
+widać na nich bardzo szybko czy dobrze zostały zebrane wzniesienia
