@@ -7,12 +7,19 @@ import csv
 def preprocessing(nazwa_pliku):
     sig, fields = wfdb.rdsamp(katalog_sygnalow + nazwa_pliku, channels=[0])
     signal = np.concatenate(sig.tolist(), axis=0)
-
     ann_ref = wfdb.rdann(katalog_sygnalow + nazwa_pliku, "atr")
-    wzniesienia = ann_ref.sample
+    wznies = ann_ref.sample
     symbole = ann_ref.symbol  # Symobole adnotacji.
+    # Petla odrzucająca adnotacje nie oznaczające punktów uderzeń serca.
+    for i in range(len(wznies)):
+        if not symbole[i] in symb_wzniesien:
+            wznies[i] = 0
+    wznies = wznies[wznies != 0]  # Usunięcie wszystkich występujących zer.
+    print(
+        f"Tyle adnotacji usunięto przed zapisem: {len(symbole) - len(wznies)}. Nie oznaczają one wzniesień."
+    )
 
-    return wzniesienia, signal
+    return wznies, signal
 
 
 # Tworzenie pliku .csv z funkcją zapisu.
@@ -32,6 +39,9 @@ def tworzenie_csv(nazwa_pliku, wzniesienia, signal):
 plik_nazw = "mit-bih/RECORDS"
 katalog_sygnalow = "mit-bih/"
 katalog_csv = "pliki_csv/"
+symb_wzniesien = (
+    "N" "L" "R" "B" "A" "a" "J" "S" "V" "r" "F" "e" "j" "n" "E" "/" "f" "Q" "?"
+)
 zakres_wyc = 270
 # Odczytanie wszystkich nazwy rekordów z pliku.
 with open(plik_nazw) as plik:

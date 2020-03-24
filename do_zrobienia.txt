@@ -1,11 +1,18 @@
-- poprawienie dokładności preprocesingu, by lepiej znajdował wzniesienia,
-najlepiej by wykożystywał adnotacje a nie sam szukał, chociaż takie wyszukiwanie też
-się przyda np. jak będzie się chciało wykożystać sygnał z innej bazy, bez adnotacji
+- trzeba przetworzyć dane w jakiś sposób który siwek wspominał
 
 - poczytać o arytmii, czy na pewno w taki sposób można wyszukać wadę, tzn. czy można 
 zrobić to patrząc tylko na zbiór wycinków, nie przetwarzając sygnału w całości
 
+- należy pamiętać że uzywany jest tylko jeden sygnał z dwóch
+
 ##########################################################
+- uwzglęndić tylko te wzniesienia w adnotacjach które nie są błędne (jest chyba kilka adnotacji
+które opisują błędy a nie wzniesienia)
+
+- poprawienie dokładności preprocesingu, by lepiej znajdował wzniesienia,
+najlepiej by wykożystywał adnotacje a nie sam szukał, chociaż takie wyszukiwanie też
+się przyda np. jak będzie się chciało wykożystać sygnał z innej bazy, bez adnotacji
+
 - może zrobić bez rozróżnienia dobrych wzniesień bo przecież i te złe wzniesienia są ważne,
 a dopiero na samym końcu wywalić te co są błędne (błęd aparatury)
 
