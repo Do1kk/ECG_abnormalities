@@ -8,5 +8,5 @@ TensorFlow + Keras
 
 OPIS
 create_csv.py - wyszukiwanie wzniesień używając biblioteki wfdb bez uwzględnienia adnotacji
-create_csv2.py - wyszukiwanie wzniesień w plikach testowych bazy mit-bih wykożystując adnotacje
-show_csv.py - zapisywanie stworzonych plików .CSV w formie zdjęcia by sprawdzić na szybko poprawność wyszukania wzniesień
+create_csv_ann.py - wyszukiwanie wzniesień w plikach testowych bazy mit-bih wykożystując adnotacje
+create_jpg.py - zapisywanie stworzonych plików .CSV w formie zdjęcia by sprawdzić na szybko poprawność wyszukania wzniesień

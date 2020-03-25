@@ -1,5 +1,4 @@
 import wfdb
-from wfdb import processing
 import numpy as np
 import csv
 
@@ -7,11 +6,20 @@ import csv
 # Reading the first channel (there are two) and preprocessing.
 def preprocessing(record_name):
     sig, fields = wfdb.rdsamp(db_folder + record_name, channels=[0])
-    xqrs = processing.XQRS(sig=sig[:, 0], fs=fields["fs"])
-    xqrs.detect(verbose=False)
     signal = np.concatenate(sig.tolist(), axis=0)
+    ann_ref = wfdb.rdann(db_folder + record_name, "atr")
+    qrs_indx = ann_ref.sample
+    symbols = ann_ref.symbol
+    # Reject annotations that do not mark heartbeat points.
+    for i in range(len(qrs_indx)):
+        if not symbols[i] in beat_annotations:
+            qrs_indx[i] = 0
+    qrs_indx = qrs_indx[qrs_indx != 0]  # Delete all zeros that occur.
+    print(
+        f"Removing annotations: {len(symbols) - len(qrs_indx)}. They do not describe peaks."
+    )
 
-    return xqrs.qrs_inds, signal
+    return qrs_indx, signal
 
 
 def creating_csv(record_name, qrs_indx, signal):
@@ -30,6 +38,9 @@ def creating_csv(record_name, qrs_indx, signal):
 record_names = "mit-bih/RECORDS"
 db_folder = "mit-bih/"
 csv_folder = "csv_files/"
+beat_annotations = (
+    "N" "L" "R" "B" "A" "a" "J" "S" "V" "r" "F" "e" "j" "n" "E" "/" "f" "Q" "?"
+)
 range_len = 270
 # Reading all record names from the file.
 with open(record_names) as file:
@@ -37,3 +48,6 @@ with open(record_names) as file:
         record_name = str(line.strip())
         qrs_indx, signal = preprocessing(record_name)
         creating_csv(record_name, qrs_indx, signal)
+
+        # print(f"signal shape: {signal.shape}")
+        # print(f"peaks shape: {qrs_indx.shape}")

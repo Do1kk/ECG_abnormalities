@@ -128,11 +128,11 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Pliki z danymi wejściowymi
+# Files with input data
 mit-bih/
 
-# Pliki z danymi przetworzonymi
-pliki_csv/
+# Files with processed data
+csv_files/
 
-# Obrazy do sprawdzania czy dobrze wyszukały się wzniesienia.
-obraz_csv/
+# Images to check if the peaks were well searched
+images_from_csv/
