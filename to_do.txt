@@ -1,11 +1,13 @@
 - trzeba przetworzyć dane w jakiś sposób który siwek wspominał
 
+- należy pamiętać że uzywany jest tylko jeden sygnał z dwóch
+
+- znormalizować jakoś zakres danych przed utworzeniem plików .jpg
+
+##########################################################
 - poczytać o arytmii, czy na pewno w taki sposób można wyszukać wadę, tzn. czy można 
 zrobić to patrząc tylko na zbiór wycinków, nie przetwarzając sygnału w całości
 
-- należy pamiętać że uzywany jest tylko jeden sygnał z dwóch
-
-##########################################################
 - uwzglęndić tylko te wzniesienia w adnotacjach które nie są błędne (jest chyba kilka adnotacji
 które opisują błędy a nie wzniesienia)
 
