@@ -7,6 +7,7 @@ Celem pracy jest projekt i implementacja nowej metody wspomagającej diagnozowan
 TensorFlow + Keras
 
 OPIS
-create_csv.py - wyszukiwanie wzniesień używając biblioteki wfdb bez uwzględnienia adnotacji
-create_csv_ann.py - wyszukiwanie wzniesień w plikach testowych bazy mit-bih wykożystując adnotacje
+create_csv_pat.py - wyszukiwanie wzniesień używając biblioteki wfdb bez uwzględnienia adnotacji
+create_csv_ann_pat.py - wyszukiwanie wzniesień w plikach testowych bazy mit-bih wykożystując adnotacje, zapisanie pliku grupując po pacjentach
+create_csv_ann_type.py - wyszukiwanie wzniesień w plikach testowych bazy mit-bih wykożystując adnotacje, zapisanie pliku grupując po typach arytmii
 create_jpg.py - zapisywanie stworzonych plików .CSV w formie zdjęcia by sprawdzić na szybko poprawność wyszukania wzniesień

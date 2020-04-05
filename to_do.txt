@@ -1,10 +1,22 @@
-- trzeba przetworzyć dane w jakiś sposób który siwek wspominał
+- trzeba przetworzyć dane "Myślałem, żeby podzielić sygnał na kawałki, z nich wygenerować obrazy i
+potworzyć pary: obraz-typ arytmii czyli input-destination dla sieci
+neuronowej. Obraz to może być wykreślony przebieg albo reprezentacja 2-wymiarowa
+sygnału (spektrogram, falki itp.)"
 
-- należy pamiętać że uzywany jest tylko jeden sygnał z dwóch
+- należy pamiętać że uzywany jest tylko jeden sygnał z dwóch, "klasyfikacja na podstawie 
+jednego sygnału"
 
 - znormalizować jakoś zakres danych przed utworzeniem plików .jpg
 
+- stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
+bazuje na bazie MIT-BIH
+
 ##########################################################
+- zamiast używania pętli i oznaczania wszystkiego co nie jest adnotacją peaks jako '0'
+użyć funkcji filter([function | expression], [collection]) <- zwraca generator nie listę
+
+- można stwożyć słownik (jeśli będzie potrzebny) za pomocą dict(zip(pierwsza_lista, druga_lista))
+
 - poczytać o arytmii, czy na pewno w taki sposób można wyszukać wadę, tzn. czy można 
 zrobić to patrząc tylko na zbiór wycinków, nie przetwarzając sygnału w całości
 

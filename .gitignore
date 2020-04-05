@@ -133,6 +133,7 @@ mit-bih/
 
 # Files with processed data
 csv_files/
+csv_type_files/
 
 # Images to check if the peaks were well searched
 images_from_csv/
