@@ -39,7 +39,7 @@ record_names = "mit-bih/RECORDS"
 db_folder = "mit-bih/"
 csv_folder = "csv_files/"
 beat_annotations = (
-    "N" "L" "R" "B" "A" "a" "J" "S" "V" "r" "F" "e" "j" "n" "E" "/" "f"  # "Q" "?"
+    "N" "L" "R" "A" "a" "J" "S" "V" "F" "e" "j" "E" "/" "f"  # "B" "r" "n" "Q" "?"
 )  # Q - Unclassifiable beat. ? - Beat not classified during learning.
 range_len = 270
 # Reading all record names from the file.

@@ -11,7 +11,12 @@ jednego sygnału"
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
+- zrobić program co będzie wyświetlał kilka początkowych przebiegów pliku typów,
+by sprawdzić samemu jak to wygląda
+
 ##########################################################
+- pogrupować przedziały na typy i zapisać do plików mających nazwy typów
+
 - zamiast używania pętli i oznaczania wszystkiego co nie jest adnotacją peaks jako '0'
 użyć funkcji filter([function | expression], [collection]) <- zwraca generator nie listę
 
