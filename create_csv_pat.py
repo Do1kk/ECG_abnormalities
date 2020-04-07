@@ -30,7 +30,7 @@ def creating_csv(record_name, qrs_indx, signal):
 record_names = "mit-bih/RECORDS"
 db_folder = "mit-bih/"
 csv_folder = "csv_files/"
-range_len = 270
+range_len = 260
 # Reading all record names from the file.
 with open(record_names) as file:
     for line in file:

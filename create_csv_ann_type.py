@@ -72,7 +72,7 @@ beat_ann_file = (
     "lF",
 )
 beat_ann_dict = dict(zip(beat_ann, beat_ann_file))
-range_len = 270
+range_len = 260
 L_side = int(range_len / 2)
 R_side = int(range_len / 2)
 

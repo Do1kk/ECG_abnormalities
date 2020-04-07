@@ -27,8 +27,6 @@ def creating_csv(record_name, qrs_indx, signal):
         writer = csv.writer(
             csv_file, delimiter=";", quotechar='"', quoting=csv.QUOTE_MINIMAL
         )
-        L_side = int(range_len / 2)
-        R_side = int(range_len / 2)
         print(f"Saving data to a file {record_name}.csv")
         # Saving searched peaks without the first and last.
         for i in qrs_indx[1:-1]:
@@ -41,7 +39,9 @@ csv_folder = "csv_files/"
 beat_annotations = (
     "N" "L" "R" "A" "a" "J" "S" "V" "F" "e" "j" "E" "/" "f"  # "B" "r" "n" "Q" "?"
 )  # Q - Unclassifiable beat. ? - Beat not classified during learning.
-range_len = 270
+range_len = 260
+L_side = int(range_len / 2)
+R_side = int(range_len / 2)
 # Reading all record names from the file.
 with open(record_names) as file:
     for line in file:
