@@ -1,13 +1,30 @@
+from numpy import genfromtxt
 import matplotlib.pyplot as plt
 import numpy as np
-from numpy import genfromtxt
 
 
-record_name = "type_S"
+record_name = "type_A"
+beat_ann = (
+    "N",  # Normal beat.
+    "L",  # Left bundle branch block beat.
+    "R",  # Right bundle branch block beat.
+    "A",  # Atrial premature beat.
+    "V",  # Premature ventricular contraction.
+    "/",  # Paced beat.
+)
+beat_ann_file = (
+    "N",
+    "L",
+    "R",
+    "A",
+    "V",
+    "Pe",
+)
+beat_ann_dict = dict(zip(beat_ann, beat_ann_file))
 y = genfromtxt("csv_type_files/" + record_name + ".csv", delimiter=";")
-x = np.array(y[0])
+x = np.array(y)
 
-# Utworzenie figury by ostatecznie obraz miał 1024x1024.
+# Creating a figure so that the image has dimensions of 1024x1024.
 plt.figure(figsize=(10.54, 10.54))
 spectrum, freqs, t, im = plt.specgram(x, Fs=360)
 plt.axis("off")

@@ -54,7 +54,6 @@ beat_ann = (
     "f",  # Fusion of paced and normal beat.
 )
 # "B" "r" "n" "Q" "?"
-
 beat_ann_file = (
     "N",
     "L",

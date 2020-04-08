@@ -9,8 +9,16 @@ jednego sygnału"
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
+- utworzyć oddzielny folder na stare programy które są już nie potrzebne
+
+- zapisać wszystkie obrazy z csv typów uderzeń serca
+
+- zamiast tworzyć to zaimportować z create_csv zmienne 
+
 ##########################################################
--przeanalizować spektrogram, coś jest nie tak
+- odrzucić typy uderzeń których jest za mało
+
+- przeanalizować spektrogram, coś jest nie tak
 
 - pogrupować przedziały na typy i zapisać do plików mających nazwy typów
 
