@@ -6,15 +6,12 @@ sygnału (spektrogram, falki itp.)"
 - należy pamiętać że uzywany jest tylko jeden sygnał z dwóch, "klasyfikacja na podstawie 
 jednego sygnału"
 
-- znormalizować jakoś zakres danych przed utworzeniem plików .jpg
-
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
-- zrobić program co będzie wyświetlał kilka początkowych przebiegów pliku typów,
-by sprawdzić samemu jak to wygląda
-
 ##########################################################
+-przeanalizować spektrogram, coś jest nie tak
+
 - pogrupować przedziały na typy i zapisać do plików mających nazwy typów
 
 - zamiast używania pętli i oznaczania wszystkiego co nie jest adnotacją peaks jako '0'

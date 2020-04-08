@@ -1,19 +1,15 @@
-from numpy import genfromtxt
-import numpy as np
-from scipy import signal
 import matplotlib.pyplot as plt
+import numpy as np
+from numpy import genfromtxt
 
 
-record_name = "type_N"
+record_name = "type_S"
 y = genfromtxt("csv_type_files/" + record_name + ".csv", delimiter=";")
-sig = np.array(y[0])
+x = np.array(y[0])
 
-freqs, times, spectrogram = signal.spectrogram(sig, scaling="density")
-
-plt.figure(figsize=(7, 7), dpi=100)
-
-plt.imshow(spectrogram, aspect="auto", cmap="hot_r", origin="lower")
-
+# Utworzenie figury by ostatecznie obraz miał 1024x1024.
+plt.figure(figsize=(10.54, 10.54))
+spectrum, freqs, t, im = plt.specgram(x, Fs=360)
 plt.axis("off")
 plt.tight_layout()
-plt.savefig("pict.png", bbox_inches="tight", pad_inches=0)
+plt.savefig("pict.png", bbox_inches="tight", pad_inches=0, dpi=100)
