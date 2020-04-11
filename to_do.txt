@@ -11,8 +11,6 @@ bazuje na bazie MIT-BIH
 
 - zapisać wszystkie obrazy z csv typów uderzeń serca
 
-- zrobić pętlę przy tworzeniu procesów
-
 ##########################################################
 - użyć multiprocessing by przyśpieszyć wykonanie tworzenia zdjęć spektrogramu i zmiejszyć
 wielkość zdjęcia (udało się zejść z 10h do 1h 30 min)
