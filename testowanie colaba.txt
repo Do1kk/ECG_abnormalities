@@ -1,0 +1,7 @@
+robienie spektrogramu type_A (2500 zdj 1024 X 1024) 
+laptop na ładowarce -> 900 s (15 min)
+
+# Colab
+domyślne ustawienia -> 936 s (15 min 36 s)
+GPU -> 777 s (12 min 57 s)
+TPU -> 909 s (15 min 9 s)
