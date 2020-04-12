@@ -5,3 +5,7 @@ laptop na ładowarce -> 900 s (15 min)
 domyślne ustawienia -> 936 s (15 min 36 s)
 GPU -> 777 s (12 min 57 s)
 TPU -> 909 s (15 min 9 s)
+
+
+# Laptop
+po zmniejszeniu rozmiaru zdj i obsłudze kilku procesów -> 1h 30 min

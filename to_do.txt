@@ -9,9 +9,20 @@ jednego sygnału"
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
-- zapisać wszystkie obrazy z csv typów uderzeń serca
+- stworzyć zwykłą cnn głęboką sieć neuronową by sprawdzić jak działa na moich danych,
+shape początkowy -> X_train (60000, 28, 28) <- macierz macierzy 28x28
+shape początkowy -> y_train (60000,) <- lista cyfr 0..9 (można to w keras łatwo zamienić na wektor)
+
+- Może wczytać z każdego typu po 2k zdjęć do treningu i później 0.5k do testów, a wyjście 
+jako macierz wektorów (0 0 0 1 0 0)
+
+- opisać który program co robi
+
+- trzeba podzielić zmienną X_train na kilka zmiennych, jedna jest za duża
 
 ##########################################################
+- zapisać wszystkie obrazy z csv typów uderzeń serca
+
 - użyć multiprocessing by przyśpieszyć wykonanie tworzenia zdjęć spektrogramu i zmiejszyć
 wielkość zdjęcia (udało się zejść z 10h do 1h 30 min)
 

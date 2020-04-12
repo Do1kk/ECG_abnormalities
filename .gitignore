@@ -140,3 +140,6 @@ images/
 
 # VS code files
 .vscode/
+
+# File for neural network
+NN_files/

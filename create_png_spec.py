@@ -32,7 +32,7 @@ beat_ann = (
 )
 beat_ann_file = ("N", "L", "R", "A", "V", "Pe")
 beat_ann = dict(zip(beat_ann, beat_ann_file))
-record_name = "type_" + beat_ann["A"]
+record_name = "type_" + beat_ann["N"]  # A, /, V, R, L, N,
 
 all_data = genfromtxt("csv_type_files/" + record_name + ".csv", delimiter=";")
 process_number = 3
