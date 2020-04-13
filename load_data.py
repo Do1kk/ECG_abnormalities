@@ -3,8 +3,8 @@ import imageio
 from numpy import savez_compressed
 
 
-train = 50
-test = 10
+train = 2000
+test = 500
 numpy_file_dir = "NN_files/"
 images_f = "images/"
 beat_ann = (
@@ -20,9 +20,9 @@ beat_ann = dict(zip(beat_ann, beat_ann_file))
 beat_ann_value = (0, 1, 2, 3, 4, 5)
 beat_ann_y = dict(zip(beat_ann_file, beat_ann_value))
 
-X_train = np.array(np.empty((0, 512, 512, 3), dtype="uint8"))
+X_train = np.array(np.empty((0, 220, 220, 3), dtype="uint8"))
 y_train = np.array(np.empty((0,), dtype="uint8"))
-X_test = np.array(np.empty((0, 512, 512, 3), dtype="uint8"))
+X_test = np.array(np.empty((0, 220, 220, 3), dtype="uint8"))
 y_test = np.array(np.empty((0,), dtype="uint8"))
 
 for k, v in beat_ann_y.items():
@@ -46,7 +46,7 @@ for k, v in beat_ann_y.items():
             # Rozmiar zajmowany przez zmienną.
             print("%d megabytes" % (X_train.size * X_train.itemsize / 1048000))
 
-# save to npy file
+# save to npy file # dane są dopisywane jak pliki już istnieją
 savez_compressed(numpy_file_dir + "X_train.npz", X_train)
 savez_compressed(numpy_file_dir + "y_train.npz", y_train)
 
