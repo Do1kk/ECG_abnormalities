@@ -23,7 +23,7 @@ jako macierz wektorów (0 0 0 1 0 0)
 - dać wszystko na githuba to można bedzie z niego wczytać do colaba
 
 - zmniejszyć zdjęcia i zmienić na czarnobiałe, jest ich tyle że lepiej jak by 
-były prostrze, np 470x470 jak było w tym wyjściowym wektorze (chyba 3x470)
+były prostrze, np 470x470 jak było w tym wyjściowym wektorze (jest 496x369)
 
 ##########################################################
 - zapisać wszystkie obrazy z csv typów uderzeń serca

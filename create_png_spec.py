@@ -7,8 +7,8 @@ import multiprocessing
 
 def save_image(x, step):
     for i, data in enumerate(x):
-        # Creating a figure so that the image has dimensions of 512x512.
-        plt.figure(figsize=(5.42, 5.42))
+        # Creating a figure so that the image has dimensions of 220x220.
+        plt.figure(figsize=(2.5, 2.5))
         spectrum, freqs, t, im = plt.specgram(data, Fs=360)
         plt.axis("off")
         plt.tight_layout()
