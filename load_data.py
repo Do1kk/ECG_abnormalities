@@ -19,7 +19,6 @@ beat_ann_file = ("N", "L", "R", "A", "V", "Pe")
 beat_ann = dict(zip(beat_ann, beat_ann_file))
 beat_ann_value = (0, 1, 2, 3, 4, 5)
 beat_ann_y = dict(zip(beat_ann_file, beat_ann_value))
-images_f = "images/"
 
 X_train = np.array(np.empty((0, 512, 512, 3), dtype="uint8"))
 y_train = np.array(np.empty((0,), dtype="uint8"))

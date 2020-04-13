@@ -20,6 +20,11 @@ jako macierz wektorów (0 0 0 1 0 0)
 
 - trzeba podzielić zmienną X_train na kilka zmiennych, jedna jest za duża
 
+- dać wszystko na githuba to można bedzie z niego wczytać do colaba
+
+- zmniejszyć zdjęcia i zmienić na czarnobiałe, jest ich tyle że lepiej jak by 
+były prostrze, np 470x470 jak było w tym wyjściowym wektorze (chyba 3x470)
+
 ##########################################################
 - zapisać wszystkie obrazy z csv typów uderzeń serca
 
