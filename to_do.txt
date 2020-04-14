@@ -19,6 +19,9 @@ bazuje na bazie MIT-BIH
 
 - stworzyć program który będzie wyświetlał 2 wykresy z każdego typu uderzeń
 
+- sprawdzić czy na pewno jest ten drugi sygnał przesunięty wszędzie o tyle samo
+(chyba na stronie bazy mit-bih było że przesunięcie jest stałe i jaką ma wartość)
+
 ##########################################################
 - sprawdzić zmienne y_train i y_test
 
