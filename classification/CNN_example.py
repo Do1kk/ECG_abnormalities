@@ -47,7 +47,7 @@ model = Sequential()
 
 # add model layers
 # 64 - liczba neuronów, kernel_size - maska 3x3,
-model.add(Conv2D(64, kernel_size=5, activation="relu", input_shape=(512, 512, 3)))
+model.add(Conv2D(64, kernel_size=5, activation="relu", input_shape=(220, 220, 3)))
 model.add(Conv2D(32, kernel_size=3, activation="relu"))
 model.add(Conv2D(16, kernel_size=3, activation="relu"))
 model.add(Conv2D(16, kernel_size=3, activation="relu"))

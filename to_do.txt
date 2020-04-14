@@ -9,6 +9,19 @@ jednego sygnału"
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
+- opisać który program co robi
+
+- trzeba podzielić zmienną X_train na kilka zmiennych, jedna jest za duża
+
+- zapisać razem wszystkie dane a później je podzielić albo podzielić w sposób losowy
+
+- przetworzyć również drugi sygnał i zapisać, pamiętać by był razem zapisany z tym pierwszym
+
+- stworzyć program który będzie wyświetlał 2 wykresy z każdego typu uderzeń
+
+##########################################################
+- sprawdzić zmienne y_train i y_test
+
 - stworzyć zwykłą cnn głęboką sieć neuronową by sprawdzić jak działa na moich danych,
 shape początkowy -> X_train (60000, 28, 28) <- macierz macierzy 28x28
 shape początkowy -> y_train (60000,) <- lista cyfr 0..9 (można to w keras łatwo zamienić na wektor)
@@ -16,16 +29,12 @@ shape początkowy -> y_train (60000,) <- lista cyfr 0..9 (można to w keras łat
 - Może wczytać z każdego typu po 2k zdjęć do treningu i później 0.5k do testów, a wyjście 
 jako macierz wektorów (0 0 0 1 0 0)
 
-- opisać który program co robi
-
-- trzeba podzielić zmienną X_train na kilka zmiennych, jedna jest za duża
-
 - dać wszystko na githuba to można bedzie z niego wczytać do colaba
 
 - zmniejszyć zdjęcia i zmienić na czarnobiałe, jest ich tyle że lepiej jak by 
-były prostrze, np 470x470 jak było w tym wyjściowym wektorze (jest 496x369)
+były prostrze, np 470x470 jak było w tym wyjściowym wektorze (jest 496x369),
+zmieniłem na 220x220 dalej rgb
 
-##########################################################
 - zapisać wszystkie obrazy z csv typów uderzeń serca
 
 - użyć multiprocessing by przyśpieszyć wykonanie tworzenia zdjęć spektrogramu i zmiejszyć
