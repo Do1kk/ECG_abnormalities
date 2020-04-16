@@ -13,8 +13,6 @@ bazuje na bazie MIT-BIH
 
 - trzeba podzielić zmienną X_train na kilka zmiennych, jedna jest za duża
 
-- zapisać razem wszystkie dane a później je podzielić albo podzielić w sposób losowy
-
 - przetworzyć również drugi sygnał i zapisać, pamiętać by był razem zapisany z tym pierwszym
 
 - stworzyć program który będzie wyświetlał 2 wykresy z każdego typu uderzeń
@@ -23,6 +21,10 @@ bazuje na bazie MIT-BIH
 (chyba na stronie bazy mit-bih było że przesunięcie jest stałe i jaką ma wartość)
 
 ##########################################################
+- ustawić pseudo losowość by wynik był powtarzalny (jest prawie powtarzalny) różnice są pewnie przez
+GPU, podobno on nadaje jakieś losowe liczby również
+- zapisać razem wszystkie dane a później je podzielić albo podzielić w sposób losowy
+
 - sprawdzić zmienne y_train i y_test
 
 - stworzyć zwykłą cnn głęboką sieć neuronową by sprawdzić jak działa na moich danych,
