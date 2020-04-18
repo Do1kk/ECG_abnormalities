@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 
 record_name = "type_A"
-y = genfromtxt("csv_type_files/" + record_name + ".csv", delimiter=";")
+y = genfromtxt("csv_type_files/" + record_name + ".csv", delimiter=";", max_rows=100)
 sig = np.array(y[1])
 
 freqs, times, Sxx = signal.spectrogram(sig, scaling="density")

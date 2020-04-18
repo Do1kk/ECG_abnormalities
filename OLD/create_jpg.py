@@ -7,6 +7,8 @@ record_name = "type_S"
 with open(record_name) as file:
     for line in file:
         record_name = str(line.strip())
-        data_array = genfromtxt("csv_files/" + record_name + ".csv", delimiter=";")
+        data_array = genfromtxt(
+            "csv_files/" + record_name + ".csv", delimiter=";", max_rows=100
+        )
         imageio.imwrite("images_from_csv/" + record_name + ".jpg", data_array)
         print(f"Create image from csv file: {record_name}.jpg")
