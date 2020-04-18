@@ -16,7 +16,7 @@ beat_ann = (
 )
 beat_ann_file = ("N", "L", "R", "A", "V", "Pe")
 beat_ann = dict(zip(beat_ann, beat_ann_file))
-beat_ann_value = (0, 1, 2, 3, 4, 5)
+beat_ann_value = (0, 1, 2, 3, 4, 5)  # zrobić to enumerate
 beat_ann_y = dict(zip(beat_ann_file, beat_ann_value))
 
 X_train_test = np.array(np.empty((0, 220, 220, 3), dtype="uint8"))

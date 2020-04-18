@@ -15,14 +15,15 @@ bazuje na bazie MIT-BIH
 
 - przetworzyć również drugi sygnał i zapisać, pamiętać by był razem zapisany z tym pierwszym
 
-- stworzyć program który będzie wyświetlał 2 wykresy z każdego typu uderzeń
-
 - sprawdzić czy na pewno jest ten drugi sygnał przesunięty wszędzie o tyle samo
 (chyba na stronie bazy mit-bih było że przesunięcie jest stałe i jaką ma wartość)
 
 ##########################################################
+- stworzyć program który będzie wyświetlał 10 wykresów z każdego typu uderzeń
+
 - ustawić pseudo losowość by wynik był powtarzalny (jest prawie powtarzalny) różnice są pewnie przez
 GPU, podobno on nadaje jakieś losowe liczby również
+
 - zapisać razem wszystkie dane a później je podzielić albo podzielić w sposób losowy
 
 - sprawdzić zmienne y_train i y_test
