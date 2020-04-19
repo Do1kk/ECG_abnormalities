@@ -18,6 +18,10 @@ bazuje na bazie MIT-BIH
 - sprawdzić czy na pewno jest ten drugi sygnał przesunięty wszędzie o tyle samo
 (chyba na stronie bazy mit-bih było że przesunięcie jest stałe i jaką ma wartość)
 
+- liczba batch (mini-batch) powinna być wielokrotnością 2, np 128
+
+- brać zdjęcia wybiórczo (są brane z początku np dla typu N jest brane 2540 zdjęc z początku wszystkich 74tys)
+
 ##########################################################
 - stworzyć program który będzie wyświetlał 10 wykresów z każdego typu uderzeń
 

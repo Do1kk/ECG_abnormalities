@@ -37,21 +37,21 @@ def creating_csv(indx_sym_dict, beat_ann_dict, signal):
 record_names = "mit-bih/RECORDS"
 db_folder = "mit-bih/"
 csv_folder = "csv_type_files/"
-beat_ann = (
-    "N",  # Normal beat.
-    "L",  # Left bundle branch block beat.
-    "R",  # Right bundle branch block beat.
-    "A",  # Atrial premature beat.
-    "a",  # Aberrated atrial premature beat.
-    "J",  # Nodal (junctional) premature beat.
-    "S",  # Supraventricular premature or ectopic beat (atrial or nodal).
-    "V",  # Premature ventricular contraction.
-    "F",  # Fusion of ventricular and normal beat.
-    "e",  # Atrial escape beat.
-    "j",  # Nodal (junctional) escape beat.
-    "E",  # Ventricular escape beat.
-    "/",  # Paced beat.
-    "f",  # Fusion of paced and normal beat.
+beat_ann = (  # ilość
+    "N",  # Normal beat.                                                    # 74984
+    "L",  # Left bundle branch block beat.                                  # 8069
+    "R",  # Right bundle branch block beat.                                 # 7250
+    "A",  # Atrial premature beat.                                          # 2544
+    "a",  # Aberrated atrial premature beat.                                # 150 odrzucone
+    "J",  # Nodal (junctional) premature beat.                              # 83 odrzucone
+    "S",  # Supraventricular premature or ectopic beat (atrial or nodal).   # 2 odrzucone
+    "V",  # Premature ventricular contraction.                              # 7128
+    "F",  # Fusion of ventricular and normal beat.                          # 802 odrzucone
+    "e",  # Atrial escape beat.                                             # 16 odrzucone
+    "j",  # Nodal (junctional) escape beat.                                 # 229 odrzucone
+    "E",  # Ventricular escape beat.                                        # 106 odrzucone
+    "/",  # Paced beat.                                                     # 7020
+    "f",  # Fusion of paced and normal beat.                                # 982 odrzucone
 )
 # "B" "r" "n" "Q" "?"
 beat_ann_file = (
