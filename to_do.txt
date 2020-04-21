@@ -9,7 +9,7 @@ jednego sygnału"
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
-- opisać który program co robi
+- opisać który program co robi, może też dać opis do funkcji typu ''' dsfsdf '''
 
 - trzeba podzielić zmienną X_train na kilka zmiennych, jedna jest za duża
 
@@ -22,6 +22,8 @@ bazuje na bazie MIT-BIH
 
 - brać zdjęcia wybiórczo (są brane z początku np dla typu N jest brane 2540 zdjęc z początku wszystkich 74tys)
 
+- uzyc "Batch Norm" na kilku warstwach, przyspieszy uczenie ale da tez troche zakłuceń(to dobrze bo bedzie
+wieksze val_acc)
 ##########################################################
 - stworzyć program który będzie wyświetlał 10 wykresów z każdego typu uderzeń
 
