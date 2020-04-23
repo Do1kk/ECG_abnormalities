@@ -24,6 +24,12 @@ bazuje na bazie MIT-BIH
 
 - uzyc "Batch Norm" na kilku warstwach, przyspieszy uczenie ale da tez troche zakłuceń(to dobrze bo bedzie
 wieksze val_acc)
+
+- może jak by te zdjęcia wypłaszczył (zamienił np 10x10x3 na wektor o długości 300) to by zajmowały mniej
+i szybciej się sieć uczyła?
+
+- może też dała by coś normalizacja danych pikseli (że podzielić wszytkie przez 255) ale wtedy trzeba zmienić 
+typ danych z uint8 na inny (taki co przechowuje liczby z zakresu [0, 1]
 ##########################################################
 - stworzyć program który będzie wyświetlał 10 wykresów z każdego typu uderzeń
 
