@@ -19,8 +19,13 @@ beat_ann = dict(zip(beat_ann, beat_ann_file))
 beat_ann_value = (0, 1, 2, 3, 4, 5)  # zrobić to enumerate
 beat_ann_y = dict(zip(beat_ann_file, beat_ann_value))
 
-X_train_test = np.array(np.empty((0, 220, 220, 3), dtype="uint8"))
-y_train_test = np.array(np.empty((0,), dtype="uint8"))
+X_train_test = np.array(
+    np.empty((0, 220, 220, 3), dtype="uint8")
+)  # pewnie najlepiej by było dać końcowy rozmiar, szybciej by się wykonało (2540*6, 220, 220, 3)
+# tylko po takiej zmianie już nie używać np.append tylko zmieniać wartości
+y_train_test = np.array(
+    np.empty((0,), dtype="uint8")
+)  # pewnie najlepiej by było dać końcowy rozmiar, szybciej by się wykonało
 for k, v in beat_ann_y.items():
     image_f_name = "type_" + k + "/"
     print(image_f_name)

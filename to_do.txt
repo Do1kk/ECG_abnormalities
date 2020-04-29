@@ -3,13 +3,13 @@ potworzyć pary: obraz-typ arytmii czyli input-destination dla sieci
 neuronowej. Obraz to może być wykreślony przebieg albo reprezentacja 2-wymiarowa
 sygnału (spektrogram, falki itp.)"
 
-- należy pamiętać że uzywany jest tylko jeden sygnał z dwóch, "klasyfikacja na podstawie 
-jednego sygnału"
+- użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
+dwóch sygnałów"
 
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
-- opisać który program co robi, może też dać opis do funkcji typu ''' dsfsdf '''
+- może dać opis do funkcji typu ''' dsfsdf '''
 
 - trzeba podzielić zmienną X_train na kilka zmiennych, jedna jest za duża
 
@@ -30,7 +30,18 @@ i szybciej się sieć uczyła?
 
 - może też dała by coś normalizacja danych pikseli (że podzielić wszytkie przez 255) ale wtedy trzeba zmienić 
 typ danych z uint8 na inny (taki co przechowuje liczby z zakresu [0, 1]
+
+- stworzyć optymalizator do kodu uczącego (keras itp) by zoptymalizować hiperparametry,
+może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał te najlepsze wyniki
+
+- używać więcej funkcji wbudowanych w np, (np.sum() ... np.add() itp)
+
 ##########################################################
+- należy pamiętać że uzywany jest tylko jeden sygnał z dwóch, "klasyfikacja na podstawie 
+jednego sygnału"
+
+- opisać który program co robi, 
+
 - stworzyć program który będzie wyświetlał 10 wykresów z każdego typu uderzeń
 
 - ustawić pseudo losowość by wynik był powtarzalny (jest prawie powtarzalny) różnice są pewnie przez
