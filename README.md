@@ -11,9 +11,11 @@ TensorFlow + Keras
 
 Starałem się używać języka angielskiego, komentarze, zmienne itp.
 
-create_csv_ann_type.py - wyszukiwanie wzniesień w plikach testowych bazy mit-bih wykożystując adnotacje, 
+### folder główny
+
+csv_ann_type.py - wyszukiwanie wzniesień w plikach testowych bazy mit-bih wykożystując adnotacje, 
 zapisanie pliku grupując po typach arytmii, nie ma tu odrzucania plików z małą ilością danych;
-create_png_spec.py - tworzenie spektrogramów i zapisywanie ich jako zdjęcia o rozmiarach 220x220 RGB, 
+png_spec.py - tworzenie spektrogramów i zapisywanie ich jako zdjęcia o rozmiarach 220x220 RGB, 
 robione jest to tylko dla wygranych (z dużą ilością przedziałów) typów bicia serca;
 load_data_train_test.py - tworzenie plików z powstałych wcześniej zdjęć spektrogramów: X_train_test.npz 
 i y_train_test.npz, są to pliki zkompresowane numpy, pozwalają znacząco zmniejszyć rozmiar danych 
