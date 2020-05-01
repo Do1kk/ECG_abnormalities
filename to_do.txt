@@ -3,6 +3,10 @@ potworzyć pary: obraz-typ arytmii czyli input-destination dla sieci
 neuronowej. Obraz to może być wykreślony przebieg albo reprezentacja 2-wymiarowa
 sygnału (spektrogram, falki itp.)"
 
+- może testy jakieś wprowadzić, tak jak jest w książce na przykład
+
+- usunąć nie potrzebne pliki które są pobrane z colaba, jest ich stanowczo za dużo
+
 - użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
 dwóch sygnałów"
 
