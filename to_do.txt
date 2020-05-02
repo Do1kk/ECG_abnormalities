@@ -40,6 +40,8 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 
 - używać więcej funkcji wbudowanych w np, (np.sum() ... np.add() itp)
 
+- zrobić w kers generatory, może szybciej będzie to działać, mniejsze użycie ramu 
+
 ##########################################################
 - należy pamiętać że uzywany jest tylko jeden sygnał z dwóch, "klasyfikacja na podstawie 
 jednego sygnału"

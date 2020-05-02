@@ -11,15 +11,12 @@ def preprocessing(record_name, beat_ann_dict):
     qrs_indx = ann_ref.sample
     symbols = ann_ref.symbol
     indx_sym = dict(zip(qrs_indx, symbols))
-    indx_sym_beat = list(
-        filter(lambda x: x[1] in beat_ann_dict.keys(), indx_sym.items())
-    )
+    indx_sym_beat = [(k, v) for k, v in indx_sym.items() if v in beat_ann_dict.keys()]
     print(
         f"Removing ann from {record_name}: {len(symbols) - len(indx_sym_beat)} <-- They don't describe peaks."
     )
     # Peaks without the first and last.
-    indx_sym_beat = list(indx_sym_beat)[1:-1]
-    indx_sym_dict = dict(indx_sym_beat)
+    indx_sym_dict = dict(indx_sym_beat[1:-1])
 
     return indx_sym_dict, signal
 
