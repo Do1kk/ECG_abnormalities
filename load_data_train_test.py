@@ -46,3 +46,14 @@ for k, v in beat_ann_y.items():
 # save to npy file # dane są dopisywane jak pliki już istnieją
 savez_compressed(numpy_file_dir + "X_train_test.npz", X_train_test)
 savez_compressed(numpy_file_dir + "y_train_test.npz", y_train_test)
+
+# zrobić jeden plin na podstawie tego przykładu
+# Examples
+# >>> test_array = np.random.rand(3, 2)
+# >>> test_vector = np.random.rand(4)
+# >>> np.savez_compressed('/tmp/123', a=test_array, b=test_vector)
+# >>> loaded = np.load('/tmp/123.npz')
+# >>> print(np.array_equal(test_array, loaded['a']))
+# True
+# >>> print(np.array_equal(test_vector, loaded['b']))
+# True

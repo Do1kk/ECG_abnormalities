@@ -15,6 +15,9 @@ bazuje na bazie MIT-BIH
 
 - może dać opis do funkcji typu ''' dsfsdf '''
 
+- tam gdzie jest zapis do pliku .npz ustawić by nie dopisywał, czyli jak jest to żęby usunął albo 
+chociaz powiadomił że już jest taki plik i on dopisze a nie zmieni go od początku
+
 - trzeba podzielić zmienną X_train na kilka zmiennych, jedna jest za duża
 
 - przetworzyć również drugi sygnał i zapisać, pamiętać by był razem zapisany z tym pierwszym
@@ -41,6 +44,10 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 - używać więcej funkcji wbudowanych w np, (np.sum() ... np.add() itp)
 
 - zrobić w kers generatory, może szybciej będzie to działać, mniejsze użycie ramu 
+
+- może w programie load_data_train_test.... zrobić zapisywanie do pliku ale ustawić klucz (jeśli
+można tak zrobić) na plik['train'] i plik['test'], będzie jeden plik, może też da radę dopisywać do
+tego pliku wybierając do którego typu dokładnie
 
 ##########################################################
 - należy pamiętać że uzywany jest tylko jeden sygnał z dwóch, "klasyfikacja na podstawie 
