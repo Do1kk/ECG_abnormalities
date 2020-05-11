@@ -5,8 +5,6 @@ sygnału (spektrogram, falki itp.)"
 
 - może testy jakieś wprowadzić, tak jak jest w książce na przykład
 
-- usunąć nie potrzebne pliki które są pobrane z colaba, jest ich stanowczo za dużo
-
 - użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
 dwóch sygnałów"
 
@@ -15,17 +13,10 @@ bazuje na bazie MIT-BIH
 
 - może dać opis do funkcji typu ''' dsfsdf '''
 
-- tam gdzie jest zapis do pliku .npz ustawić by nie dopisywał, czyli jak jest to żęby usunął albo 
-chociaz powiadomił że już jest taki plik i on dopisze a nie zmieni go od początku
-
-- trzeba podzielić zmienną X_train na kilka zmiennych, jedna jest za duża
-
 - przetworzyć również drugi sygnał i zapisać, pamiętać by był razem zapisany z tym pierwszym
 
 - sprawdzić czy na pewno jest ten drugi sygnał przesunięty wszędzie o tyle samo
 (chyba na stronie bazy mit-bih było że przesunięcie jest stałe i jaką ma wartość)
-
-- liczba batch (mini-batch) powinna być wielokrotnością 2, np 128
 
 - brać zdjęcia wybiórczo (są brane z początku np dla typu N jest brane 2540 zdjęc z początku wszystkich 74tys)
 
@@ -43,13 +34,13 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 
 - używać więcej funkcji wbudowanych w np, (np.sum() ... np.add() itp)
 
-- zrobić w kers generatory, może szybciej będzie to działać, mniejsze użycie ramu 
-
-- może w programie load_data_train_test.... zrobić zapisywanie do pliku ale ustawić klucz (jeśli
-można tak zrobić) na plik['train'] i plik['test'], będzie jeden plik, może też da radę dopisywać do
-tego pliku wybierając do którego typu dokładnie
-
 ##########################################################
+- liczba batch (mini-batch) powinna być wielokrotnością 2, np 128
+
+- zrobić w kers generatory, może szybciej będzie to działać, mniejsze użycie ramu,
+można wtedy kożystać ze zdjęć a nie z spakowanego pliku numpy na podstwaie zdjęć, jest szybciej
+i zostawia się wszystko bibliotece keras i tensorflow
+
 - należy pamiętać że uzywany jest tylko jeden sygnał z dwóch, "klasyfikacja na podstawie 
 jednego sygnału"
 
