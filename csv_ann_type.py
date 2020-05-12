@@ -3,8 +3,16 @@ import numpy as np
 import csv
 
 
-# Reading the first channel (there are two) and preprocessing.
 def preprocessing(record_name, beat_ann_dict):
+    """Reading the first channel (there are two) and preprocessing.
+
+    Arguments:              
+        record_name {[type]} -- [description]
+        beat_ann_dict {[type]} -- [description]
+
+    Returns:
+        [type] -- [description]
+    """
     sig, fields = wfdb.rdsamp(db_folder + record_name, channels=[0])
     signal = np.concatenate(sig.tolist(), axis=0)
     ann_ref = wfdb.rdann(db_folder + record_name, "atr")
@@ -22,6 +30,13 @@ def preprocessing(record_name, beat_ann_dict):
 
 
 def creating_csv(indx_sym_dict, beat_ann_dict, signal):
+    """Creating .csv file.
+
+    Arguments:
+        indx_sym_dict {[type]} -- [description]
+        beat_ann_dict {[type]} -- [description]
+        signal {[type]} -- [description]
+    """
     for k, v in indx_sym_dict.items():
         file_name = "type_" + beat_ann_dict[v]
         with open(csv_folder + file_name + ".csv", "a", newline="") as csv_file:

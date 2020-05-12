@@ -6,6 +6,12 @@ import multiprocessing
 
 
 def save_image(x, step):
+    """Save image.
+
+    Arguments:
+        x {[type]} -- [description]
+        step {[type]} -- [description]
+    """
     for i, data in enumerate(x):
         # Creating a figure so that the image has dimensions of 220x220.
         plt.figure(figsize=(2.5, 2.5))
@@ -37,6 +43,8 @@ record_name = (
 )  # A, /, V, R, L, N, ustawić pętlę by robił wszystkie na raz
 
 all_data = genfromtxt("csv_type_files/" + record_name + ".csv", delimiter=";")
+
+# Division of data for individual processes.
 process_number = 3
 data_per_proc = int(len(all_data) / process_number)
 data = []
@@ -45,6 +53,7 @@ data.append(np.array(all_data[data_per_proc : data_per_proc * 2]))
 data.append(np.array(all_data[data_per_proc * 2 :]))
 
 start_time = time.time()
+# Setting to enable multiprocessing.
 if __name__ == "__main__":
     step = 0
     # Creating processes.

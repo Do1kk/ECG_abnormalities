@@ -11,8 +11,6 @@ dwóch sygnałów"
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
-- może dać opis do funkcji typu ''' dsfsdf '''
-
 - przetworzyć również drugi sygnał i zapisać, pamiętać by był razem zapisany z tym pierwszym
 
 - sprawdzić czy na pewno jest ten drugi sygnał przesunięty wszędzie o tyle samo
@@ -26,15 +24,20 @@ wieksze val_acc)
 - może jak by te zdjęcia wypłaszczył (zamienił np 10x10x3 na wektor o długości 300) to by zajmowały mniej
 i szybciej się sieć uczyła?
 
-- może też dała by coś normalizacja danych pikseli (że podzielić wszytkie przez 255) ale wtedy trzeba zmienić 
-typ danych z uint8 na inny (taki co przechowuje liczby z zakresu [0, 1]
-
 - stworzyć optymalizator do kodu uczącego (keras itp) by zoptymalizować hiperparametry,
 może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał te najlepsze wyniki
 
 - używać więcej funkcji wbudowanych w np, (np.sum() ... np.add() itp)
 
+- importowanie zmiennyc/funkcji z innych plików by nie powtarzać kodu
+
 ##########################################################
+- może dać opis do funkcji typu ''' dsfsdf '''
+
+- może też dała by coś normalizacja danych pikseli (że podzielić wszytkie przez 255) ale wtedy trzeba zmienić 
+typ danych z uint8 na inny (taki co przechowuje liczby z zakresu [0, 1], dodatkowo liczby zmienno przecinkowe 
+są lepiej liczone przez GPU
+
 - liczba batch (mini-batch) powinna być wielokrotnością 2, np 128
 
 - zrobić w kers generatory, może szybciej będzie to działać, mniejsze użycie ramu,
