@@ -48,6 +48,7 @@ if __name__ == "__main__":
     print("początek instrukcji po if __name__")
     for val in beat_ann.values():
         print(f"tworzenie zdjęć w katalogu: {val}")
+        print()
         record_name = (
             "type_" + val
         )  # A, L, V, /, R, N ustawić pętlę by robił wszystkie na raz

@@ -31,9 +31,9 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 
 - importowanie zmiennyc/funkcji z innych plików by nie powtarzać kodu
 
-- jeśli są zdjęcia to program png_spec nie zapisuje w ich miejsce nowych, trzeba to poprawić
-
 ##########################################################
+- w png_spec.py ustawic by robił wszystkie typy zdjęć w pętli, jest mały problem z multiprocessingem
+
 - przesunąć wycięte przedziały, dlatego że bicie serca nie jest wyśrodkowane do głównego peak (lewa 
 strona jest krótsza a prawa dłuższa), w magisterce można podać obliczenia czemu taka długość przedziału
 i czemu takie przesunięcie
