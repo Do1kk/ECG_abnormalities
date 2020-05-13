@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 import imageio
 
 record_name = "type_"
-how_many = 10
+how_many = 300
 
 fig, axs = plt.subplots(2, 6, figsize=(14, 5), constrained_layout=True)
 axs[0, 0].set_ylabel("10 przykładowych przebiegów")
 for index, name in enumerate(beat_ann.values()):
     all_data = genfromtxt(
-        "csv_type_files/" + record_name + name + ".csv", delimiter=";", max_rows=100
+        "csv_type_files/" + record_name + name + ".csv", delimiter=";", max_rows=300
     )
     some_data = all_data[:how_many]
     image_f_name = "type_" + name + "/"

@@ -49,6 +49,11 @@ def creating_csv(indx_sym_dict, beat_ann_dict, signal):
 record_names = "mit-bih/RECORDS"
 db_folder = "mit-bih/"
 csv_folder = "csv_type_files/"
+range_len = 260  # 260 i równy rozkład
+shift = 25  # przesunięcie środka
+L_side = int(range_len / 2) - shift
+R_side = int(range_len / 2) + shift
+
 beat_ann = (  # ilość
     "N",  # Normal beat.                                                    # 74984
     "L",  # Left bundle branch block beat.                                  # 8069
@@ -83,9 +88,6 @@ beat_ann_file = (
     "lF",
 )
 beat_ann_dict = dict(zip(beat_ann, beat_ann_file))
-range_len = 260
-L_side = int(range_len / 2)
-R_side = int(range_len / 2)
 
 # Creating empty csv files.
 for symbol, f_name in beat_ann_dict.items():

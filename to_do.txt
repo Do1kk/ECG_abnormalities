@@ -31,7 +31,13 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 
 - importowanie zmiennyc/funkcji z innych plików by nie powtarzać kodu
 
+- jeśli są zdjęcia to program png_spec nie zapisuje w ich miejsce nowych, trzeba to poprawić
+
 ##########################################################
+- przesunąć wycięte przedziały, dlatego że bicie serca nie jest wyśrodkowane do głównego peak (lewa 
+strona jest krótsza a prawa dłuższa), w magisterce można podać obliczenia czemu taka długość przedziału
+i czemu takie przesunięcie
+
 - może dać opis do funkcji typu ''' dsfsdf '''
 
 - może też dała by coś normalizacja danych pikseli (że podzielić wszytkie przez 255) ale wtedy trzeba zmienić 
