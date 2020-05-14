@@ -1,3 +1,5 @@
+from csv_ann_type import beat_ann_dict
+
 from numpy import genfromtxt
 import numpy as np
 import matplotlib.pyplot as plt
@@ -31,22 +33,10 @@ def save_image(x, step, record_name):
         plt.close()
 
 
-# images_folder = "images/"
-beat_ann = (
-    "N",  # Normal beat.
-    "L",  # Left bundle branch block beat.
-    "R",  # Right bundle branch block beat.
-    "A",  # Atrial premature beat.
-    "V",  # Premature ventricular contraction.
-    "/",  # Paced beat.
-)
-beat_ann_file = ("N", "L", "R", "A", "V", "Pe")
-beat_ann = dict(zip(beat_ann, beat_ann_file))
-
 # Setting to enable multiprocessing.
 if __name__ == "__main__":
     print("początek instrukcji po if __name__")
-    for val in beat_ann.values():
+    for val in beat_ann_dict.values():
         print(f"tworzenie zdjęć w katalogu: {val}")
         print()
         record_name = (

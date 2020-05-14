@@ -1,4 +1,4 @@
-from png_spec import beat_ann, images_folder
+from png_spec import beat_ann_dict, images_folder
 
 from numpy import genfromtxt
 import matplotlib.pyplot as plt
@@ -9,7 +9,7 @@ how_many = 300
 
 fig, axs = plt.subplots(2, 6, figsize=(14, 5), constrained_layout=True)
 axs[0, 0].set_ylabel("10 przykładowych przebiegów")
-for index, name in enumerate(beat_ann.values()):
+for index, name in enumerate(beat_ann_dict.values()):
     all_data = genfromtxt(
         "csv_type_files/" + record_name + name + ".csv", delimiter=";", max_rows=300
     )
