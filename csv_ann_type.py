@@ -69,6 +69,9 @@ beat_ann = (  # ilość
     "E",  # Ventricular escape beat.                                        # 106 odrzucone
     "/",  # Paced beat.                                                     # 7020
     "f",  # Fusion of paced and normal beat.                                # 982 odrzucone
+    "Q",  # Dodatkowe typy które wspomniano
+    # "B",
+    # "n",
 )
 # "B" "r" "n" "Q" "?"
 beat_ann_file = (
@@ -86,6 +89,9 @@ beat_ann_file = (
     "E",
     "Pe",
     "lF",
+    "Q",
+    # "B",
+    # "lN",
 )
 beat_ann_dict = dict(zip(beat_ann, beat_ann_file))
 

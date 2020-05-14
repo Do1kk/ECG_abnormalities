@@ -1,5 +1,3 @@
-from csv_ann_type import beat_ann_dict
-
 from numpy import genfromtxt
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,7 +5,7 @@ import time
 import multiprocessing
 
 
-def save_image(x, step, record_name):
+def save_image(x, step, record_name, group_name):
     """Save image.
 
     Arguments:
@@ -25,7 +23,7 @@ def save_image(x, step, record_name):
         plt.axis("off")
         plt.tight_layout()
         plt.savefig(
-            f"images/{record_name}/{i + step}.png",
+            f"images/{record_name[:5]}{group_name}/{i + step}{record_name[5:]}.png",
             bbox_inches="tight",
             pad_inches=0,
             dpi=100,
@@ -33,12 +31,41 @@ def save_image(x, step, record_name):
         plt.close()
 
 
+# Nowy podział na grupy:
+# co ciekawe zostały jeszcze typy "!, P, p".....
+beat_ann_group = {
+    "N": "NLRB",  # <- non-ectopic,
+    "S": "aJASjen",  # <- supraventricular ectopic,
+    "V": "VE",  # <- ventricular ectopic,
+    "F": "F",  # <- fusion beats,
+    "Q": "/fQ",  # <- Unknown beats.
+}
+
+beat_ann_dict = {
+    "N": "N",
+    "L": "L",
+    "R": "R",
+    "A": "A",
+    "a": "lA",
+    "J": "J",
+    "S": "S",
+    "V": "V",
+    "F": "F",
+    "e": "lE",
+    "j": "lJ",
+    "E": "E",
+    "/": "Pe",
+    "f": "lF",
+    "Q": "Q",
+}
+
 # Setting to enable multiprocessing.
 if __name__ == "__main__":
     print("początek instrukcji po if __name__")
-    for val in beat_ann_dict.values():
-        print(f"tworzenie zdjęć w katalogu: {val}")
+    for key, val in beat_ann_dict.items():
         print()
+        print(f"tworzenie zdjęć z pliku: {val}.csv")
+        [group_name] = [k for k, v in beat_ann_group.items() if key in v]
         record_name = (
             "type_" + val
         )  # A, L, V, /, R, N ustawić pętlę by robił wszystkie na raz
@@ -58,15 +85,15 @@ if __name__ == "__main__":
         step = 0
         # Creating processes.
         p1 = multiprocessing.Process(
-            name="p1", target=save_image, args=(data[0], step, record_name)
+            name="p1", target=save_image, args=(data[0], step, record_name, group_name)
         )
         step += data_per_proc
         p2 = multiprocessing.Process(
-            name="p2", target=save_image, args=(data[1], step, record_name)
+            name="p2", target=save_image, args=(data[1], step, record_name, group_name)
         )
         step += data_per_proc
         p3 = multiprocessing.Process(
-            name="p3", target=save_image, args=(data[2], step, record_name)
+            name="p3", target=save_image, args=(data[2], step, record_name, group_name)
         )
 
         # Starting process px.
