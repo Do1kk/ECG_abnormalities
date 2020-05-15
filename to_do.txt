@@ -32,6 +32,9 @@ z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy z
 
 - włączyć użycie tcp na colab
 
+- zrobić testy jak się uczy dzieląć na train/dev/test np .8 .1 .1 i dająć np każdego typu 100 zdjęć do 
+dev i 100 do test a resztę do train
+
 ##########################################################
 - importowanie zmiennyc/funkcji z innych plików by nie powtarzać kodu
 
