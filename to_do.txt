@@ -27,6 +27,12 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 
 - używać więcej funkcji wbudowanych w np, (np.sum() ... np.add() itp)
 
+- może zrobić następny program co ma słownik tylko tych typów co mają małą ilość i tworzy nowe pliki csv
+z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy zdjęcia
+
+- włączyć użycie tcp na colab
+
+##########################################################
 - importowanie zmiennyc/funkcji z innych plików by nie powtarzać kodu
 
 - # Nowy podział na grupy:
@@ -37,7 +43,6 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 # Q <- Unknown beats.
 # co ciekawe zostały jeszcze typy "!, P, p".....
 
-##########################################################
 - brać zdjęcia wybiórczo (są brane z początku np dla typu N jest brane 2540 zdjęc z początku wszystkich 74tys),
 teraz jest mięszane podczas podziału w image_split.py
 - w png_spec.py ustawic by robił wszystkie typy zdjęć w pętli, jest mały problem z multiprocessingem

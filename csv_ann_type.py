@@ -73,7 +73,6 @@ beat_ann = (  # ilość
     # "B",
     # "n",
 )
-# "B" "r" "n" "Q" "?"
 beat_ann_file = (
     "N",
     "L",
