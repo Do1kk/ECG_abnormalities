@@ -30,14 +30,17 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 - może zrobić następny program co ma słownik tylko tych typów co mają małą ilość i tworzy nowe pliki csv
 z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy zdjęcia
 
+- napisać instrukcję co po czym uruchamiać w tym projekcie
+
+##########################################################
+
 - zrobić testy jak się uczy dzieląć na train/dev/test np .8 .1 .1 i dająć np każdego typu 100 zdjęć do 
 dev i 100 do test a resztę do train
 
 - sprawdzić jak będzie z oversampling i jak bez, czyli wyniki w colab
+słabe wyniki, uczył się na treningowych loss spadał i wzrastała dokładność, w dev(val) trzymało się na stałym pozimie
+po jakimś 4-5 epoch (ok 1 val_loss i ok 0.8 val_acc)
 
-- napisać instrukcję co po czym uruchamiać w tym projekcie
-
-##########################################################
 - włączyć użycie tcp na colab
 
 - importowanie zmiennyc/funkcji z innych plików by nie powtarzać kodu

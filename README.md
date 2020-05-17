@@ -7,6 +7,13 @@ Celem pracy jest projekt i implementacja nowej metody wspomagającej diagnozowan
 
 TensorFlow + Keras
 
+# Kolejność uruchamiania
+1. csv_ann_type.py
+2. png_spec.py
+3. image_split.py
+4. wstawienie spakowanych zdjęć (.zip) na dysk
+5. podłączenie dyku w colab i uruchomienie wczytywanie_zdjec2.ipynb
+
 # Opis programów
 
 Starałem się używać języka angielskiego, komentarze, zmienne itp.
