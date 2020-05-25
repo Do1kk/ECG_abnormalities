@@ -3,15 +3,17 @@ import numpy as np
 import csv
 
 
-def preprocessing(record_name, beat_ann_dict):
+def preprocessing(record_name, db_folder, beat_ann_dict):
     """Reading the first channel (there are two) and preprocessing.
 
     Arguments:              
-        record_name {[type]} -- [description]
-        beat_ann_dict {[type]} -- [description]
+        record_name {str} -- path to the file that stores the name of all records
+        db_folder {str} -- path to the folder that stores MIT-BIH database
+        beat_ann_dict {dict of str} -- dict of types of heartbeats and their corresponding folder names
 
     Returns:
-        [type] -- [description]
+        indx_sym_dict {dict of int and str} -- dict of peak heart points and their corresponding types of heartbeat
+        signal {float} -- continuous patient measurement signal (digital signal sampled 360 Hz)
     """
     sig, fields = wfdb.rdsamp(db_folder + record_name, channels=[0])
     signal = np.concatenate(sig.tolist(), axis=0)
@@ -29,13 +31,16 @@ def preprocessing(record_name, beat_ann_dict):
     return indx_sym_dict, signal
 
 
-def creating_csv(indx_sym_dict, beat_ann_dict, signal):
+def creating_csv(indx_sym_dict, beat_ann_dict, signal, csv_folder, L_side, R_side):
     """Creating .csv file.
 
     Arguments:
-        indx_sym_dict {[type]} -- [description]
-        beat_ann_dict {[type]} -- [description]
-        signal {[type]} -- [description]
+        indx_sym_dict {dict of int and str} -- dict of peak heart points and their corresponding types of heartbeat
+        beat_ann_dict {dict of str} -- dict of types of heartbeats and their corresponding folder names
+        signal {float} -- continuous patient measurement signal
+        csv_folder {str} -- path to the folder that stores .csv files
+        L_side {int} -- signal length left of the main hill
+        R_side {int} -- signal length right of the main hill
     """
     for k, v in indx_sym_dict.items():
         file_name = "type_" + beat_ann_dict[v]
@@ -49,7 +54,7 @@ def creating_csv(indx_sym_dict, beat_ann_dict, signal):
 record_names = "mit-bih/RECORDS"
 db_folder = "mit-bih/"
 csv_folder = "csv_type_files/"
-range_len = 260  # 260 i równy rozkład
+range_len = 260
 shift = 25  # przesunięcie środka
 L_side = int(range_len / 2) - shift
 R_side = int(range_len / 2) + shift
@@ -104,8 +109,8 @@ for symbol, f_name in beat_ann_dict.items():
 with open(record_names) as file:
     for line in file:
         record_name = str(line.strip())
-        indx_sym_dict, signal = preprocessing(record_name, beat_ann_dict)
-        creating_csv(indx_sym_dict, beat_ann_dict, signal)
+        indx_sym_dict, signal = preprocessing(record_name, db_folder, beat_ann_dict)
+        creating_csv(indx_sym_dict, beat_ann_dict, signal, csv_folder, L_side, R_side)
 
         # print(f"signal shape: {signal.shape}")
         # print(f"peaks shape: {qrs_indx.shape}")

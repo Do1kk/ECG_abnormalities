@@ -9,8 +9,10 @@ def save_image(x, step, record_name, group_name):
     """Save image.
 
     Arguments:
-        x {[type]} -- [description]
-        step {[type]} -- [description]
+        x {list of np.array of float} -- portion of the data from the .csv file, continuous patient measurement signal divided into equal intervals
+        step {int} -- the beginning of photo numbering allows to divide data into individual processes in an appropriate way
+        record_name {str} -- heartbeat type name
+        group_name {str} -- name of the group of heartbeat types
     """
     # sprawdzanie jaki to proces
     name = multiprocessing.current_process().name

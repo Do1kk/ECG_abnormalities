@@ -30,9 +30,15 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 - może zrobić następny program co ma słownik tylko tych typów co mają małą ilość i tworzy nowe pliki csv
 z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy zdjęcia
 
-- napisać instrukcję co po czym uruchamiać w tym projekcie
+- zapytać promotora czy komentarze i zmienne po angielsku czy po polsku
+
+- zapytać promotora czy może kontaktować się przez isod, wstawiać tam pliki i wgl
+
+- jeszcze raz przetestować dzieląc .8 .1 .1 ale dając mu dużo czasu, np ucząc kilka razy po 5h
 
 ##########################################################
+
+- napisać instrukcję co po czym uruchamiać w tym projekcie
 
 - zrobić testy jak się uczy dzieląć na train/dev/test np .8 .1 .1 i dająć np każdego typu 100 zdjęć do 
 dev i 100 do test a resztę do train

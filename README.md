@@ -12,7 +12,7 @@ TensorFlow + Keras
 2. png_spec.py
 3. image_split.py
 4. wstawienie spakowanych zdjęć (.zip) na dysk
-5. podłączenie dyku w colab i uruchomienie wczytywanie_zdjec2.ipynb
+5. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
 
 # Opis programów
 
