@@ -22,6 +22,7 @@ def preprocessing(record_name, db_folder, beat_ann_dict):
     symbols = ann_ref.symbol
     indx_sym = dict(zip(qrs_indx, symbols))
     indx_sym_beat = [(k, v) for k, v in indx_sym.items() if v in beat_ann_dict.keys()]
+    # print(f"Set of symbols in {record_name} record: {set(symbols)}")
     print(
         f"Removing ann from {record_name}: {len(symbols) - len(indx_sym_beat)} <-- They don't describe peaks."
     )
@@ -74,9 +75,10 @@ beat_ann = (  # ilość
     "E",  # Ventricular escape beat.                                        # 106 odrzucone
     "/",  # Paced beat.                                                     # 7020
     "f",  # Fusion of paced and normal beat.                                # 982 odrzucone
-    "Q",  # Dodatkowe typy które wspomniano
-    # "B",
+    "Q",  # Unclassifiable beat.
     # "n",
+    # "x",  # Opisany jako "p" na stronie bazy danych: "Non-conducted P-wave (blocked APB)" bloced Atrial premature beat, czyli podobny do "A"
+    # "!",  # Opisany jako "!" na stronie bazy danych: "Ventricular flutter wave"
 )
 beat_ann_file = (
     "N",
@@ -94,8 +96,9 @@ beat_ann_file = (
     "Pe",
     "lF",
     "Q",
-    # "B",
     # "lN",
+    # "lX",
+    # "lV",
 )
 beat_ann_dict = dict(zip(beat_ann, beat_ann_file))
 

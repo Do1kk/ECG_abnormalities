@@ -36,8 +36,8 @@ def save_image(x, step, record_name, group_name):
 # Nowy podział na grupy:
 # co ciekawe zostały jeszcze typy "!, P, p".....
 beat_ann_group = {
-    "N": "NLRB",  # <- non-ectopic,
-    "S": "aJASjen",  # <- supraventricular ectopic,
+    "N": "NLRB",  # <- non-ectopic,                     brak B (bo to uogólnienie L i R)
+    "S": "aJASjen",  # <- supraventricular ectopic,     brak n
     "V": "VE",  # <- ventricular ectopic,
     "F": "F",  # <- fusion beats,
     "Q": "/fQ",  # <- Unknown beats.
