@@ -1,0 +1,10 @@
+dalej mocno zróżnicowana liczba zdjęć w grupach
+
+uczone kilka razy zapisując i póżniej wczytująć ten model by dalej go uczyć
+
+learning rate nie zmienia się bo pochodzi z compilacji modelu, czyli każde uruchomienie prawdopodobnie wraca do ostatniego 
+learning rate, bo chyba zapisuje się ono w moim zapisanym modelu
+
+uczyłem jeszcze kilka razy ten model ale wyniki były tylko trochę lepsze albo nawet gorsze
+powodem jest na pewno mała ilość danych głównie jednej grupy ale jak widać i przed ostatnia grupa 
+osiągneła bardzo słabe wyniki

@@ -19,9 +19,6 @@ bazuje na bazie MIT-BIH
 - uzyc "Batch Norm" na kilku warstwach, przyspieszy uczenie ale da tez troche zakłuceń(to dobrze bo bedzie
 wieksze val_acc)
 
-- może jak by te zdjęcia wypłaszczył (zamienił np 10x10x3 na wektor o długości 300) to by zajmowały mniej
-i szybciej się sieć uczyła?
-
 - stworzyć optymalizator do kodu uczącego (keras itp) by zoptymalizować hiperparametry,
 może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał te najlepsze wyniki
 
@@ -30,13 +27,15 @@ może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał 
 - może zrobić następny program co ma słownik tylko tych typów co mają małą ilość i tworzy nowe pliki csv
 z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy zdjęcia
 
-- zapytać promotora czy komentarze i zmienne po angielsku czy po polsku
-
-- zapytać promotora czy może kontaktować się przez isod, wstawiać tam pliki i wgl
-
 - jeszcze raz przetestować dzieląc .8 .1 .1 ale dając mu dużo czasu, np ucząc kilka razy po 5h
 
 ##########################################################
+- zapytać promotora jak podzielić dane, proporcionalnie czy jednak dać stałe liczyb w dev i test
+dla każdego typu
+
+- zapytać promotora czy może kontaktować się przez isod, wstawiać tam pliki i wgl
+
+- zapytać promotora czy komentarze i zmienne po angielsku czy po polsku
 
 - napisać instrukcję co po czym uruchamiać w tym projekcie
 
