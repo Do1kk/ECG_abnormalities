@@ -29,6 +29,10 @@ z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy z
 
 - jeszcze raz przetestować dzieląc .8 .1 .1 ale dając mu dużo czasu, np ucząc kilka razy po 5h
 
+- poprawić sig_display.py
+
+- zrobić coś z tym by nie przetwarzał pliku z którego pobiera zmienną
+
 ##########################################################
 - zapytać promotora jak podzielić dane, proporcionalnie czy jednak dać stałe liczyb w dev i test
 dla każdego typu

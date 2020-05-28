@@ -17,7 +17,7 @@ for index, name in enumerate(beat_ann_dict.values()):
     )
     some_data = all_data[:how_many]
     image_f_name = "type_" + name + "/"
-    im = imageio.imread(images_folder + image_f_name + "0.png")[:, :, :3]
+    im = imageio.imread(images_folder + image_f_name + "0" + name + ".png")[:, :, :3]
     axs[0, index].set_title(name)
 
     for i in range(how_many):
