@@ -65,16 +65,16 @@ beat_ann = (  # ilość
     "L",  # Left bundle branch block beat.                                  # 8069
     "R",  # Right bundle branch block beat.                                 # 7250
     "A",  # Atrial premature beat.                                          # 2544
-    "a",  # Aberrated atrial premature beat.                                # 150 odrzucone
-    "J",  # Nodal (junctional) premature beat.                              # 83 odrzucone
-    "S",  # Supraventricular premature or ectopic beat (atrial or nodal).   # 2 odrzucone
+    "a",  # Aberrated atrial premature beat.                                # 150
+    "J",  # Nodal (junctional) premature beat.                              # 83
+    "S",  # Supraventricular premature or ectopic beat (atrial or nodal).   # 2
     "V",  # Premature ventricular contraction.                              # 7128
-    "F",  # Fusion of ventricular and normal beat.                          # 802 odrzucone
-    "e",  # Atrial escape beat.                                             # 16 odrzucone
-    "j",  # Nodal (junctional) escape beat.                                 # 229 odrzucone
-    "E",  # Ventricular escape beat.                                        # 106 odrzucone
+    "F",  # Fusion of ventricular and normal beat.                          # 802
+    "e",  # Atrial escape beat.                                             # 16
+    "j",  # Nodal (junctional) escape beat.                                 # 229
+    "E",  # Ventricular escape beat.                                        # 106
     "/",  # Paced beat.                                                     # 7020
-    "f",  # Fusion of paced and normal beat.                                # 982 odrzucone
+    "f",  # Fusion of paced and normal beat.                                # 982
     "Q",  # Unclassifiable beat.
     # "n",
     # "x",  # Opisany jako "p" na stronie bazy danych: "Non-conducted P-wave (blocked APB)" bloced Atrial premature beat, czyli podobny do "A"

@@ -6,7 +6,7 @@ import imageio
 
 record_name = "type_"
 images_folder = "images/"
-how_many = 2
+how_many = 1
 number_of_type = len(beat_ann_dict)
 
 fig, axs = plt.subplots(2, number_of_type, figsize=(17, 5), constrained_layout=True)
@@ -17,12 +17,12 @@ for index, name in enumerate(beat_ann_dict.values()):
     )
     some_data = all_data[:how_many]
     image_f_name = "type_" + name + "/"
-    im = imageio.imread(images_folder + image_f_name + "0" + name + ".png")[:, :, :3]
+    # im = imageio.imread(images_folder + image_f_name + "0" + name + ".png")[:, :, :3]
     axs[0, index].set_title(name)
 
     for i in range(how_many):
         axs[0, index].plot(some_data[i])
     axs[1, index].axis("off")
     axs[1, index].set_title("spekr.")
-    axs[1, index].imshow(im)
+    # axs[1, index].imshow(im)
 plt.show()

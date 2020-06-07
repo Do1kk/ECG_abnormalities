@@ -1,8 +1,3 @@
-- trzeba przetworzyć dane "Myślałem, żeby podzielić sygnał na kawałki, z nich wygenerować obrazy i
-potworzyć pary: obraz-typ arytmii czyli input-destination dla sieci
-neuronowej. Obraz to może być wykreślony przebieg albo reprezentacja 2-wymiarowa
-sygnału (spektrogram, falki itp.)"
-
 - może testy jakieś wprowadzić, tak jak jest w książce na przykład
 
 - użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
@@ -22,18 +17,34 @@ wieksze val_acc)
 - stworzyć optymalizator do kodu uczącego (keras itp) by zoptymalizować hiperparametry,
 może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał te najlepsze wyniki
 
-- używać więcej funkcji wbudowanych w np, (np.sum() ... np.add() itp)
-
 - może zrobić następny program co ma słownik tylko tych typów co mają małą ilość i tworzy nowe pliki csv
 z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy zdjęcia
+typy z małą ilością:
+type_F - 802 (grupa F - 802)
+type_lA - 150 (grupa S - 3024)
+type_J - 83 (grupa S - 3024)
+type_S - 2 (grupa S - 3024)
+type_lJ - 229 (grupa S - 3024)
+type_lE - 16 (grupa S - 3024)
 
-- jeszcze raz przetestować dzieląc .8 .1 .1 ale dając mu dużo czasu, np ucząc kilka razy po 5h
+- to chyba nie jest wydajne, 
+        data = []
+        data.append(np.array(all_data[:data_per_proc]))
+        data.append(np.array(all_data[data_per_proc : data_per_proc * 2]))
+        data.append(np.array(all_data[data_per_proc * 2 :]))
 
 - poprawić sig_display.py
 
 - zrobić coś z tym by nie przetwarzał pliku z którego pobiera zmienną
 
+- zrobić jakiś program jak sig_dispaly ale żeby pokazywał jakie grupy i jakie typy do nich należą,
+by można było wizualnie zauważyć podobieństaw tych typów w danej grupie
+
+- tam w images zmienić type_... na group_... by nie myliło się z typami arytmii
+
 ##########################################################
+- jeszcze raz przetestować dzieląc .8 .1 .1 ale dając mu dużo czasu, np ucząc kilka razy po 5h
+
 - zapytać promotora jak podzielić dane, proporcionalnie czy jednak dać stałe liczyb w dev i test
 dla każdego typu
 
