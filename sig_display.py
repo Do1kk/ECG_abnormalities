@@ -6,7 +6,7 @@ import imageio
 
 record_name = "type_"
 images_folder = "images/"
-how_many = 1
+how_many = 2
 number_of_type = len(beat_ann_dict)
 
 fig, axs = plt.subplots(2, number_of_type, figsize=(17, 5), constrained_layout=True)

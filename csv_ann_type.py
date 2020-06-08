@@ -3,7 +3,7 @@ import numpy as np
 import csv
 
 
-def preprocessing(record_name, db_folder, beat_ann_dict):
+def preprocessing(record_name, db_folder, beat_ann_dict, channel):
     """Reading the first channel (there are two) and preprocessing.
 
     Arguments:              
@@ -15,7 +15,7 @@ def preprocessing(record_name, db_folder, beat_ann_dict):
         indx_sym_dict {dict of int and str} -- dict of peak heart points and their corresponding types of heartbeat
         signal {float} -- continuous patient measurement signal (digital signal sampled 360 Hz)
     """
-    sig, fields = wfdb.rdsamp(db_folder + record_name, channels=[0])
+    sig, fields = wfdb.rdsamp(db_folder + record_name, channels=[channel])
     signal = np.concatenate(sig.tolist(), axis=0)
     ann_ref = wfdb.rdann(db_folder + record_name, "atr")
     qrs_indx = ann_ref.sample
@@ -32,7 +32,9 @@ def preprocessing(record_name, db_folder, beat_ann_dict):
     return indx_sym_dict, signal
 
 
-def creating_csv(indx_sym_dict, beat_ann_dict, signal, csv_folder, L_side, R_side):
+def creating_csv(
+    indx_sym_dict, beat_ann_dict, signal, csv_folder, L_side, R_side, channel=""
+):
     """Creating .csv file.
 
     Arguments:
@@ -44,7 +46,7 @@ def creating_csv(indx_sym_dict, beat_ann_dict, signal, csv_folder, L_side, R_sid
         R_side {int} -- signal length right of the main hill
     """
     for k, v in indx_sym_dict.items():
-        file_name = "type_" + beat_ann_dict[v]
+        file_name = "type_" + beat_ann_dict[v] + channel
         with open(csv_folder + file_name + ".csv", "a", newline="") as csv_file:
             writer = csv.writer(
                 csv_file, delimiter=";", quotechar='"', quoting=csv.QUOTE_MINIMAL
@@ -112,8 +114,24 @@ for symbol, f_name in beat_ann_dict.items():
 with open(record_names) as file:
     for line in file:
         record_name = str(line.strip())
-        indx_sym_dict, signal = preprocessing(record_name, db_folder, beat_ann_dict)
-        creating_csv(indx_sym_dict, beat_ann_dict, signal, csv_folder, L_side, R_side)
+        # Signal 1
+        indx_sym_dict, signal1 = preprocessing(
+            record_name, db_folder, beat_ann_dict, channel=0
+        )
+        creating_csv(indx_sym_dict, beat_ann_dict, signal1, csv_folder, L_side, R_side)
+        # Signal 2
+        indx_sym_dict, signal2 = preprocessing(
+            record_name, db_folder, beat_ann_dict, channel=1
+        )
+        creating_csv(
+            indx_sym_dict,
+            beat_ann_dict,
+            signal2,
+            csv_folder,
+            L_side,
+            R_side,
+            channel="2",
+        )
 
         # print(f"signal shape: {signal.shape}")
         # print(f"peaks shape: {qrs_indx.shape}")

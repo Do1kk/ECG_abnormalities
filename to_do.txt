@@ -1,7 +1,7 @@
 - może testy jakieś wprowadzić, tak jak jest w książce na przykład
 
 - użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
-dwóch sygnałów"
+dwóch sygnałów", pamiętać by modF był tak samo tworzony dla obu sygnałów
 
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
