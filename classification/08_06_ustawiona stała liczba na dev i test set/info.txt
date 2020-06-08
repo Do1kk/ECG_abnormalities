@@ -1,0 +1,5 @@
+- ustawione po 400 dla każdej grupy na dev i 400 na test
+
+- jest tu dodatkowo zmodifikowana grupa_F było 802 teraz jest ponad 3 tysiące
+
+- wyniki są trochę lepsze niż bez tej zmodyfikowanej grupy_F (typu_F)

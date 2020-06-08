@@ -39,7 +39,7 @@ beat_ann_group = {
     "N": "NLRB",  # <- non-ectopic,                     brak B (bo to uogólnienie L i R)
     "S": "aJASjen",  # <- supraventricular ectopic,     brak n
     "V": "VE",  # <- ventricular ectopic,
-    "F": "F",  # <- fusion beats,
+    "F": "FmodF",  # <- fusion beats,
     "Q": "/fQ",  # <- Unknown beats.
 }
 
@@ -59,6 +59,7 @@ beat_ann_dict = {
     "/": "Pe",
     "f": "lF",
     "Q": "Q",
+    "modF": "modF",
 }
 
 # Setting to enable multiprocessing.

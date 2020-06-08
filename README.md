@@ -9,10 +9,11 @@ TensorFlow + Keras
 
 # Kolejność uruchamiania
 1. csv_ann_type.py
-2. png_spec.py
-3. image_split.py
-4. wstawienie spakowanych zdjęć (.zip) na dysk
-5. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
+2. mod_csv_ann.py
+3. png_spec.py
+4. image_split.py
+5. wstawienie spakowanych zdjęć (.zip) na dysk
+6. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
 
 # Opis programów
 
@@ -23,11 +24,17 @@ Starałem się używać języka angielskiego, komentarze, zmienne itp.
 csv_ann_type.py - wyszukiwanie wzniesień w plikach testowych bazy mit-bih wykożystując adnotacje, 
 zapisanie pliku grupując po typach arytmii, nie ma tu odrzucania plików z małą ilością danych;
 
+mod_csv_ann.py - kożysta na zrobionym wcześniej pliku csv wycinków sygnału by przetworzyć sygnał
+i stworzyć nowe wycinki, stworzony w celu zwiększenia ilości zdjęć spektrogramów typu_F i grupy_F;
+
 png_spec.py - tworzenie spektrogramów i zapisywanie ich jako zdjęcia o rozmiarach 220x220 RGB, 
 robione jest to tylko dla wygranych (z dużą ilością przedziałów) typów bicia serca;
 
 sig_display.py - wyświetlenie subplotów na potrzeby pokazania i zobaczenia jak to wygląda, 
 zdjęcia spektrogramów oraz nie przetworzone przebiegi po wycięciu przedziałów;
+
+image_split.py - pozwala na podzielenie zdjęć na sety (train/dev/test) do późniejszego trenowania sieci 
+neuronowej;
 
 ### OLD/
 load_data_train_test.py - tworzenie plików z powstałych wcześniej zdjęć spektrogramów: X_train_test.npz 

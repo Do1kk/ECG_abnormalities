@@ -17,16 +17,6 @@ wieksze val_acc)
 - stworzyć optymalizator do kodu uczącego (keras itp) by zoptymalizować hiperparametry,
 może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał te najlepsze wyniki
 
-- może zrobić następny program co ma słownik tylko tych typów co mają małą ilość i tworzy nowe pliki csv
-z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy zdjęcia
-typy z małą ilością:
-type_F - 802 (grupa F - 802)
-type_lA - 150 (grupa S - 3024)
-type_J - 83 (grupa S - 3024)
-type_S - 2 (grupa S - 3024)
-type_lJ - 229 (grupa S - 3024)
-type_lE - 16 (grupa S - 3024)
-
 - to chyba nie jest wydajne, 
         data = []
         data.append(np.array(all_data[:data_per_proc]))
@@ -43,6 +33,11 @@ by można było wizualnie zauważyć podobieństaw tych typów w danej grupie
 - tam w images zmienić type_... na group_... by nie myliło się z typami arytmii
 
 ##########################################################
+- może zrobić następny program co ma słownik tylko tych typów co mają małą ilość i tworzy nowe pliki csv
+z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy zdjęcia
+typy z małą ilością:
+type_F - 802 (grupa F - 802)
+
 - jeszcze raz przetestować dzieląc .8 .1 .1 ale dając mu dużo czasu, np ucząc kilka razy po 5h
 
 - zapytać promotora jak podzielić dane, proporcionalnie czy jednak dać stałe liczyb w dev i test
