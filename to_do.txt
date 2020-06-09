@@ -6,11 +6,6 @@ dwóch sygnałów", pamiętać by modF był tak samo tworzony dla obu sygnałów
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
-- przetworzyć również drugi sygnał i zapisać, pamiętać by był razem zapisany z tym pierwszym
-
-- sprawdzić czy na pewno jest ten drugi sygnał przesunięty wszędzie o tyle samo
-(chyba na stronie bazy mit-bih było że przesunięcie jest stałe i jaką ma wartość)
-
 - uzyc "Batch Norm" na kilku warstwach, przyspieszy uczenie ale da tez troche zakłuceń(to dobrze bo bedzie
 wieksze val_acc)
 
@@ -33,6 +28,8 @@ by można było wizualnie zauważyć podobieństaw tych typów w danej grupie
 - tam w images zmienić type_... na group_... by nie myliło się z typami arytmii
 
 ##########################################################
+- przetworzyć również drugi sygnał i zapisać,
+
 - może zrobić następny program co ma słownik tylko tych typów co mają małą ilość i tworzy nowe pliki csv
 z danymi po modyfikacji, później dodać tylko te pliki do programu co tworzy zdjęcia
 typy z małą ilością:
