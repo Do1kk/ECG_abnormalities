@@ -1,8 +1,5 @@
 - może testy jakieś wprowadzić, tak jak jest w książce na przykład
 
-- użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
-dwóch sygnałów", pamiętać by modF był tak samo tworzony dla obu sygnałów
-
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
@@ -27,7 +24,13 @@ by można było wizualnie zauważyć podobieństaw tych typów w danej grupie
 
 - tam w images zmienić type_... na group_... by nie myliło się z typami arytmii
 
+- można by było zrobić jakąś obsługę błędów, np. gdy robię zdjęcie z 2 sygnałów by sprawdzało
+czy licza wycinków się zgadza (musi być taka sama dla signal1 i signal2)
+
 ##########################################################
+- użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
+dwóch sygnałów", pamiętać by modF był tak samo tworzony dla obu sygnałów
+
 - przetworzyć również drugi sygnał i zapisać,
 
 - może zrobić następny program co ma słownik tylko tych typów co mają małą ilość i tworzy nowe pliki csv
