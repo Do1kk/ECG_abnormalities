@@ -1,0 +1,2 @@
+- to co poprzednio ale zdjęcie jest połączeniem dwóch sygnałów, czyli wycinków z 2 odczytów,
+po lewej główny sygnał(a właściwie spectrogram wycinka) a po prawej drugi sygnał

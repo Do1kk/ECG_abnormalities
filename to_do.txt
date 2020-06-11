@@ -27,6 +27,9 @@ by można było wizualnie zauważyć podobieństaw tych typów w danej grupie
 - można by było zrobić jakąś obsługę błędów, np. gdy robię zdjęcie z 2 sygnałów by sprawdzało
 czy licza wycinków się zgadza (musi być taka sama dla signal1 i signal2)
 
+- coś zrobić żeby na przykład w nazwie modelu który jest zapisywany była liczba przeprowadzonych epoch,
+pozwolało by to później jakoś zidentyfikować zmiany modelu
+
 ##########################################################
 - użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
 dwóch sygnałów", pamiętać by modF był tak samo tworzony dla obu sygnałów

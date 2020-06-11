@@ -141,5 +141,8 @@ images/
 # VS code files
 .vscode/
 
-# File for neural network
-# NN_files/
+# File for images with one signal
+jeden_sygnal/
+
+# Rejected type_N
+rejected_type_N/
