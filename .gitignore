@@ -146,3 +146,6 @@ jeden_sygnal/
 
 # Rejected type_N
 rejected_type_N/
+
+# Some too big files in classification
+classification/16_06_AlexNet_użyty_AlexNet/AlexNet/

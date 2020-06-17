@@ -1,0 +1,3 @@
+- usunięcie zdjęć z grupy N, zostało po 3 tyś każdego typu będącego w tej grupie, czyli
+razem 9 tyś grupy N
+- reszta jest tak samo jak w poprzednim czyli zdjęcie składające sie z 2 sygnałów

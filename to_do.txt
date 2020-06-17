@@ -31,6 +31,8 @@ czy licza wycinków się zgadza (musi być taka sama dla signal1 i signal2)
 pozwolało by to później jakoś zidentyfikować zmiany modelu
 
 ##########################################################
+- odrzucenie dużej ilości zdjęć z grupy_N dla poprawienia szybkości oraz wyników
+
 - użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
 dwóch sygnałów", pamiętać by modF był tak samo tworzony dla obu sygnałów
 

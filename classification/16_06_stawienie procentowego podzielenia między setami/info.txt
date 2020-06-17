@@ -1,0 +1,4 @@
+- ustalenie procentowego podziału 0.8/0.15/0.15, podobno procentowo jest najlepiej
+
+- dodanie 2 funkcji z keras.callbacks, TensorBoard i ModelCheckpoint, dzięki temu zapisuje logi i modele
+z każdego przebiegu, do tego można wznawiać kiedy się chce i tensorboard ma bardoz dużo opcji analizy

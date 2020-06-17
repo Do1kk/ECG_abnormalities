@@ -1,0 +1,6 @@
+- CNN AlexNet, wykożystałem przykład z internetu zmieniając tylko rozmiar zdjęcia
+
+- ze względu że moje zdjęcia są mniejsze od rozmiaru orginalnego to ostatnie warstwy nie
+są tak optymalnie zorbione jak potrzeba, np conv2d_4 jest rozmiaru 2, 2, 256
+
+- optimizer='adam' wcześniej używałem Adamax
