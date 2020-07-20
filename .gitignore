@@ -156,3 +156,6 @@ classification/16_06_AlexNet_użyty_AlexNet/CNN_AlexNet/
 classification/17_06_VGG-16/CNN_VGG-16/
 classification/18_06_ResNet50/CNN_ResNet50/
 classification/19_06_InceptionResNetV2/CNN_InceptionResNetV2/
+
+# Temporary location for image from type_F
+test_type_F/

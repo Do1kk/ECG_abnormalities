@@ -1,11 +1,5 @@
 - może testy jakieś wprowadzić, tak jak jest w książce na przykład
 
-- trzeba dać 15% z type_F do testowych, może zrobić losowanie linni i poźniej wziąc z końca te 15% ?
-albo zrobić jakiś type_test_F by oddzielić a później dopiero z reszty podzielić na sety,
-może najpiers zrobić wszystko na danych prócz tych 15% testowych i jak już zdjęcia zostaną podzielone
-na 3 grupy to przenieść testowej grupy F do treningowej i validacyjnej a później przenieść zdjęcia testowe 
-grupy F do odpowiedniego folderu
-
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
 bazuje na bazie MIT-BIH
 
@@ -37,6 +31,10 @@ czy licza wycinków się zgadza (musi być taka sama dla signal1 i signal2)
 pozwolało by to później jakoś zidentyfikować zmiany modelu
 
 ##########################################################
+- zrobić wszystko na danych prócz tych 15% testowych type_F i jak już zdjęcia zostaną podzielone
+na 3 grupy to przenieść testowej grupy F do treningowej i validacyjnej a później przenieść zdjęcia testowe 
+grupy F do odpowiedniego folderu
+
 - odrzucenie dużej ilości zdjęć z grupy_N dla poprawienia szybkości oraz wyników
 
 - użyć również drugiego sygnału (może połączyć razem z pierwszym i zrobić jeden obraz?) "klasyfikacja na podstawie 
