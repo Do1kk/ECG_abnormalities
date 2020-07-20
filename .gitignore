@@ -137,12 +137,16 @@ csv_type_files/
 
 # Images to train/dev/test
 images/
+OLD/OLD_images/
 
 # VS code files
 .vscode/
 
 # File for images with one signal
-jeden_sygnal/
+OLD/jeden_sygnal/
+
+# Split images
+train_val_test/
 
 # Rejected type_N
 rejected_type_N/

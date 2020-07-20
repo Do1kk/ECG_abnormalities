@@ -12,8 +12,9 @@ TensorFlow + Keras
 2. mod_csv_ann.py
 3. png_spec.py
 4. image_split.py
-5. wstawienie spakowanych zdjęć (.zip) na dysk
-6. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
+5. file_move.py 
+6. wstawienie spakowanych zdjęć (.zip) na dysk
+7. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
 
 # Opis programów
 
@@ -35,6 +36,9 @@ zdjęcia spektrogramów oraz nie przetworzone przebiegi po wycięciu przedział�
 
 image_split.py - pozwala na podzielenie zdjęć na sety (train/dev/test) do późniejszego trenowania sieci 
 neuronowej;
+
+file_move.py - przenosi nadmiar zdjęć grupy N, zostawiając tylko 9k zdjęć (po 3k z każdego typu 
+należącego do tej grupy);
 
 ### OLD/
 load_data_train_test.py - tworzenie plików z powstałych wcześniej zdjęć spektrogramów: X_train_test.npz 
