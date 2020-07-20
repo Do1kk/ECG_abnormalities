@@ -2,26 +2,31 @@ import numpy as np
 import csv
 import random
 from scipy.interpolate import interp1d
+from image_split import test_ratio
+from csv_ann_type import csv_folder, range_len, L_side, R_side
 
 
-# Creating empty csv files for modificated signal.
+# Creating empty csv files.
 def empty_csv_file(mod_file_dir):
     with open(mod_file_dir, "w") as csv_file:
         csv_file.write("")
 
 
-# Usunąć stąd test_data, po zrobieniu zdjęć, zostaną przeniesione przed podzieleniem.
-# Odczytanie danych i oddzielenie danych na zbiór testowy by móc je później przetworzyć.
-def read_and_split_data(file_dir):
+def read_csv_file(file_dir):
     with open(file_dir, "r", newline="") as f:
         data = list(
             csv.reader(f, delimiter=";", quotechar='"', quoting=csv.QUOTE_MINIMAL)
         )
-    random.shuffle(data)
-    data_from_csv = np.array(data, dtype=np.float16)[int(test_set_perc * len(data)) :]
-    test_data = np.array(data, dtype=np.float16)[: int(test_set_perc * len(data))]
+    return data
 
-    return data_from_csv, test_data
+
+def overwrite_csv_file(file_dir, data):
+    with open(file_dir, "w", newline="") as csv_file:
+        writer = csv.writer(
+            csv_file, delimiter=";", quotechar='"', quoting=csv.QUOTE_MINIMAL
+        )
+        for d in data:
+            writer.writerow(d)
 
 
 # Dopisywanie danych do plików już po zmodyfikowaniu.
@@ -32,6 +37,26 @@ def append_mod_data(mod_file_dir, mod_data):
         )
         for data in mod_data:
             writer.writerow(data)
+
+
+# Usunąć stąd test_data, po zrobieniu zdjęć, zostaną przeniesione przed podzieleniem.
+# Odczytanie danych i oddzielenie danych na zbiór testowy by móc je później przetworzyć.
+def read_and_split_data(file_dir1, file_dir2, test_ratio):
+    data1 = read_csv_file(file_dir1)
+    data2 = read_csv_file(file_dir2)
+
+    # Złącznie danych przed przetasowaniem by pierwszy odpowiadał sygnałowi drugiemu.
+    temp_data = list(zip(data1, data2))
+    random.shuffle(temp_data)
+    data1, data2 = zip(*temp_data)
+
+    overwrite_csv_file(file_dir1, data1)
+    overwrite_csv_file(file_dir2, data2)
+
+    data_from_csv1 = np.array(data1, dtype=np.float16)[int(test_ratio * len(data1)) :]
+    data_from_csv2 = np.array(data2, dtype=np.float16)[int(test_ratio * len(data2)) :]
+
+    return data_from_csv1, data_from_csv2
 
 
 # Modyfikacja danych przy pomocy mnożenia przez wartość bliską jedynki.
@@ -82,13 +107,7 @@ def second_metod_data_modification(mod_data1, mod_data2):
     )
 
 
-csv_folder = "csv_type_files/"
-range_len = 260
-shift = 25  # przesunięcie środka
-L_side = int(range_len / 2) - shift
-R_side = int(range_len / 2) + shift
-test_set_perc = 0.15
-
+data_mult = 4
 symbol = "F"  # Fusion of ventricular and normal beat. Ilość: 802
 f_name = "F"
 
@@ -100,11 +119,12 @@ mod_file2_dir = csv_folder + "type_mod" + f_name + "2.csv"
 empty_csv_file(mod_file1_dir)
 empty_csv_file(mod_file2_dir)
 
-data_from_csv1, test_data1 = read_and_split_data(file1_dir)
-data_from_csv2, test_data2 = read_and_split_data(file2_dir)
+data_from_csv1, data_from_csv2 = read_and_split_data(file1_dir, file2_dir, test_ratio)
 
-mod_data1, mod_data2 = first_metod_data_modification(data_from_csv1, data_from_csv2)
-mod_data1, mod_data2 = second_metod_data_modification(mod_data1, mod_data2)
+# Powielenie danych, data_mult - 1 kopii zmodyfikowanych.
+for i in range(data_mult - 1):
+    mod_data1, mod_data2 = first_metod_data_modification(data_from_csv1, data_from_csv2)
+    mod_data1, mod_data2 = second_metod_data_modification(mod_data1, mod_data2)
 
-append_mod_data(mod_file1_dir, mod_data1)
-append_mod_data(mod_file2_dir, mod_data2)
+    append_mod_data(mod_file1_dir, mod_data1)
+    append_mod_data(mod_file2_dir, mod_data2)

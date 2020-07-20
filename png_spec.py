@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import multiprocessing
+from csv_ann_type import beat_ann_dict
 
 
 def save_image(sig1, sig2, step, beat_type, group_name):
@@ -50,29 +51,12 @@ beat_ann_group = {
     "F": "FmodF",  # <- fusion beats,
     "Q": "/fQ",  # <- Unknown beats.
 }
-
-beat_ann_dict = {
-    "N": "N",
-    "L": "L",
-    "R": "R",
-    "A": "A",
-    "a": "lA",
-    "J": "J",
-    "S": "S",
-    "V": "V",
-    "F": "F",
-    "e": "lE",
-    "j": "lJ",
-    "E": "E",
-    "/": "Pe",
-    "f": "lF",
-    "Q": "Q",
-    "modF": "modF",
-}
+# Dodanie dodatkowo zmodyfikowanego typu F.
+beat_ann_dict["modF"] = "modF"
 
 # Setting to enable multiprocessing.
 if __name__ == "__main__":
-    print("początek instrukcji po if __name__")
+    print("początek przydzielania procesów")
     for key, val in beat_ann_dict.items():
         print()
         print(f"tworzenie zdjęć z pliku: {val}.csv")

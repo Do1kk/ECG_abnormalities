@@ -104,34 +104,37 @@ beat_ann_file = (
 )
 beat_ann_dict = dict(zip(beat_ann, beat_ann_file))
 
-# Creating empty csv files.
-for symbol, f_name in beat_ann_dict.items():
-    file_name = "type_" + f_name
-    with open(csv_folder + file_name + ".csv", "w") as csv_file:
-        csv_file.write("")
+if __name__ == "__main__":
+    # Creating empty csv files.
+    for symbol, f_name in beat_ann_dict.items():
+        file_name = "type_" + f_name
+        with open(csv_folder + file_name + ".csv", "w") as csv_file:
+            csv_file.write("")
 
-# Reading all record names from the file and create csv files.
-with open(record_names) as file:
-    for line in file:
-        record_name = str(line.strip())
-        # Signal 1
-        indx_sym_dict, signal1 = preprocessing(
-            record_name, db_folder, beat_ann_dict, channel=0
-        )
-        creating_csv(indx_sym_dict, beat_ann_dict, signal1, csv_folder, L_side, R_side)
-        # Signal 2
-        indx_sym_dict, signal2 = preprocessing(
-            record_name, db_folder, beat_ann_dict, channel=1
-        )
-        creating_csv(
-            indx_sym_dict,
-            beat_ann_dict,
-            signal2,
-            csv_folder,
-            L_side,
-            R_side,
-            channel="2",
-        )
+    # Reading all record names from the file and create csv files.
+    with open(record_names) as file:
+        for line in file:
+            record_name = str(line.strip())
+            # Signal 1
+            indx_sym_dict, signal1 = preprocessing(
+                record_name, db_folder, beat_ann_dict, channel=0
+            )
+            creating_csv(
+                indx_sym_dict, beat_ann_dict, signal1, csv_folder, L_side, R_side
+            )
+            # Signal 2
+            indx_sym_dict, signal2 = preprocessing(
+                record_name, db_folder, beat_ann_dict, channel=1
+            )
+            creating_csv(
+                indx_sym_dict,
+                beat_ann_dict,
+                signal2,
+                csv_folder,
+                L_side,
+                R_side,
+                channel="2",
+            )
 
-        # print(f"signal shape: {signal.shape}")
-        # print(f"peaks shape: {qrs_indx.shape}")
+            # print(f"signal shape: {signal.shape}")
+            # print(f"peaks shape: {qrs_indx.shape}")
