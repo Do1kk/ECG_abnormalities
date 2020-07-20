@@ -1,0 +1,3 @@
+- wczytanie modelu ResNet50 z bib keras, bez wag, dużo ułatwia
+
+- zmiana ostatniej warstwy by działała klasyfikacja gdy jest 5 klas

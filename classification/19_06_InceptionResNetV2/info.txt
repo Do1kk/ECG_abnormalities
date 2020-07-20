@@ -1,0 +1,1 @@
+- dużo warstw (~560) i przez to długo się trenuje

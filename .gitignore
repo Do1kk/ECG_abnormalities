@@ -148,4 +148,7 @@ jeden_sygnal/
 rejected_type_N/
 
 # Some too big files in classification
-classification/16_06_AlexNet_użyty_AlexNet/AlexNet/
+classification/16_06_AlexNet_użyty_AlexNet/CNN_AlexNet/
+classification/17_06_VGG-16/CNN_VGG-16/
+classification/18_06_ResNet50/CNN_ResNet50/
+classification/19_06_InceptionResNetV2/CNN_InceptionResNetV2/
