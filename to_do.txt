@@ -31,6 +31,8 @@ czy licza wycinków się zgadza (musi być taka sama dla signal1 i signal2)
 pozwolało by to później jakoś zidentyfikować zmiany modelu
 
 ##########################################################
+- zmiana podzielenia na 0.6, 0.2, 0.2
+
 - zrobić wszystko na danych prócz tych 15% testowych type_F i jak już zdjęcia zostaną podzielone
 na 3 grupy to przenieść testowej grupy F do treningowej i validacyjnej a później przenieść zdjęcia testowe 
 grupy F do odpowiedniego folderu

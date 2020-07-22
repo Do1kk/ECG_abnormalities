@@ -11,10 +11,11 @@ TensorFlow + Keras
 1. csv_ann_type.py
 2. mod_csv_ann.py
 3. png_spec.py
-4. image_split.py
-5. file_move.py 
-6. wstawienie spakowanych zdjęć (.zip) na dysk
-7. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
+4. file_move.py 
+5. image_split.py
+6. zrobienie kopi (2x to samo) dla type_S w zbiorze train i dev (\train_val_test\train\type_S) ...
+7. wstawienie spakowanych zdjęć (.zip) na dysk
+8. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
 
 # Opis programów
 

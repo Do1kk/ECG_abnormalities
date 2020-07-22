@@ -82,6 +82,9 @@ beat_ann = (  # ilość
     # "x",  # Opisany jako "p" na stronie bazy danych: "Non-conducted P-wave (blocked APB)" bloced Atrial premature beat, czyli podobny do "A"
     # "!",  # Opisany jako "!" na stronie bazy danych: "Ventricular flutter wave"
 )
+
+# Nazwy przypisane, głównie ze względu na niemożność stworzenia katalogów o nazwie "/" czy z
+# rozróżnieniem małych i wielkich liter.
 beat_ann_file = (
     "N",
     "L",

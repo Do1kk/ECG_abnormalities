@@ -107,7 +107,7 @@ def second_metod_data_modification(mod_data1, mod_data2):
     )
 
 
-data_mult = 4
+data_mult = 5
 symbol = "F"  # Fusion of ventricular and normal beat. Ilość: 802
 f_name = "F"
 
