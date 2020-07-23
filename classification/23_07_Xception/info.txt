@@ -1,0 +1,9 @@
+- trenowanie modelu któy jeszcze mocno się nie przetrenował również na 
+val set (dwa przebiegi na sam koniec) niestety praktycznie bez zmian
+
+- model xception trenował się dużo dłużej (około 5x dłużej)
+
+- dziwne że tak długo, powinien być wydajniejszy
+
+- trenowany bez wag początkowych, można trewnoać z wagami i zamrozić 
+kilka warstw, spróbuję tego później na tym modelu

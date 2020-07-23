@@ -1,0 +1,13 @@
+- zmiana podziału na 0.6, 0.2, 0.2
+
+- w grupie N zostało tylko 12k (3 * 4k) 
+
+- z grupy F jest wzięte 0.2 danych i przeniesione do danych testowych,
+reszta tej grupy jest zmodyfikowana 4 razy i rozdzielona w proporciach
+między dane treningowe i walidacyjne
+
+- grupa S została powielona ale tylko dla danych testowych i walidacyjnych
+pomyślałem że to pozwoli uzyskać lepsze wyniki dla tej grupy
+
+- został zmieniony optymalizator na "Nadam", wydaje się że uzyskuje on lekko 
+lepsze wyniki
