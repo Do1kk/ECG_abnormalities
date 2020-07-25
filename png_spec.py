@@ -18,16 +18,22 @@ def save_image(sig1, sig2, step, beat_type, group_name):
     # sprawdzanie jaki to proces
     name = multiprocessing.current_process().name
     print(f"teraz działa proces: {name}, początek numeracji zdj {step}")
+    NFFT = 15
+    noverlap = 10
     signal = zip(sig1, sig2)
     for i, (data1, data2) in enumerate(signal):
         # Creating a figure so that the image has dimensions of 220x220.
         plt.figure(figsize=(2.51, 2.51))
         # Pierwszy sygnał.
-        plt.subplot(1, 2, 1), plt.specgram(data1, Fs=360)
+        plt.subplot(1, 2, 1), plt.specgram(
+            data1, Fs=360, NFFT=NFFT, noverlap=noverlap
+        )  # plt.subplot(1, 2, 1), plt.specgram(data1, Fs=360) # tak było wcześniej
         plt.axis("off")
         plt.tight_layout()
         # Drugi sygnał.
-        plt.subplot(1, 2, 2), plt.specgram(data2, Fs=360)
+        plt.subplot(1, 2, 2), plt.specgram(
+            data2, Fs=360, NFFT=NFFT, noverlap=noverlap
+        )  # plt.subplot(1, 2, 2), plt.specgram(data2, Fs=360) # tak było wcześniej
         plt.axis("off")
         plt.tight_layout()
         # Ustawienie odstępu między dwoma obrazami.
@@ -45,8 +51,8 @@ def save_image(sig1, sig2, step, beat_type, group_name):
 # Nowy podział na grupy:
 # co ciekawe zostały jeszcze typy "!, P, p".....
 beat_ann_group = {
-    "N": "NLRB",  # <- non-ectopic,                     brak B (bo to uogólnienie L i R)
-    "S": "aJASjen",  # <- supraventricular ectopic,     brak n
+    "N": "NLR",  # <- non-ectopic,                     brak B (bo to uogólnienie L i R)
+    "S": "aJASje",  # <- supraventricular ectopic,     brak n
     "V": "VE",  # <- ventricular ectopic,
     "F": "FmodF",  # <- fusion beats,
     "Q": "/fQ",  # <- Unknown beats.

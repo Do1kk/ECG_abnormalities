@@ -10,7 +10,7 @@ TensorFlow + Keras
 # Kolejność uruchamiania
 1. csv_ann_type.py
 2. mod_csv_ann.py
-3. png_spec.py
+3. png_spec.py (przed tym usunąć pliki z "rejected_type_N", "train_val_test")
 4. file_move.py 
 5. image_split.py
 6. zrobienie kopi (2x to samo) dla type_S w zbiorze train i dev (\train_val_test\train\type_S) ...
