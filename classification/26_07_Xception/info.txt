@@ -1,0 +1,3 @@
+- jest zmieniony spektrogram, wcześniej były domyślen parametry więc praktycznie
+oź "x" się nie zmieniała, teraz jest ustwaione NFFT=15, noverlap=10 czyli okno
+bierze 15 pkt, trochę słabo bo najlepiej by okno było wielokrotnością dwójki

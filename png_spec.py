@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import multiprocessing
+from scipy.interpolate import interp1d
 from csv_ann_type import beat_ann_dict
 
 
@@ -18,10 +19,26 @@ def save_image(sig1, sig2, step, beat_type, group_name):
     # sprawdzanie jaki to proces
     name = multiprocessing.current_process().name
     print(f"teraz działa proces: {name}, początek numeracji zdj {step}")
-    NFFT = 15
-    noverlap = 10
+
+    NFFT = 64
+    noverlap = 32
+    point_multiply = 8  # 2080
+    # jeśli dobrze liczy to wysokości będzie 64 poziomów (bo NFFT = 64) i szerokości
+    # będzie 128 poziomów (bo 260 * 8 - noverlap / (NFFT - noverlap) = 64 i to razy 2 sygnały)
     signal = zip(sig1, sig2)
     for i, (data1, data2) in enumerate(signal):
+
+        # Stworzenie linni i spróbkowanie drugi raz by było więcej punktów
+        # do tworzenia dobrych spektrogramów.
+        dl_org = len(data1)
+        dl_new = dl_org * point_multiply
+        x = np.linspace(0, dl_org, num=dl_org)
+        x_new = np.linspace(0, dl_org, num=dl_new)
+        f1 = interp1d(x, data1, kind="linear")
+        f2 = interp1d(x, data2, kind="linear")
+        data1 = f1(x_new)
+        data2 = f2(x_new)
+
         # Creating a figure so that the image has dimensions of 220x220.
         plt.figure(figsize=(2.51, 2.51))
         # Pierwszy sygnał.
