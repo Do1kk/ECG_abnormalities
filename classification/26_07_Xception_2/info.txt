@@ -1,0 +1,2 @@
+- jest zmieniony spektrogram teraz jest ustwaione NFFT=64, noverlap=32 
+czyli okno bierze 64 pkt z pokryciem 32 pkt
