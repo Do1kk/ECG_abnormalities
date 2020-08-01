@@ -4,7 +4,7 @@ import csv
 
 
 def preprocessing(record_name, db_folder, beat_ann_dict, channel):
-    """Reading the first channel (there are two) and preprocessing.
+    """Reading the "channel" signal and preprocessing.
 
     Arguments:              
         record_name {str} -- path to the file that stores the name of all records
