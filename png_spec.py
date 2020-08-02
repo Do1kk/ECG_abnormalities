@@ -11,9 +11,16 @@ def save_image(sig1, sig2, step, beat_type, group_name):
     """Save image.
 
     Arguments:
-        x {list of np.array of float} -- portion of the data from the .csv file, continuous patient measurement signal divided into equal intervals
-        step {int} -- the beginning of photo numbering allows to divide data into individual processes in an appropriate way
-        record_name {str} -- heartbeat type name
+        sig1 {list of np.array of float} -- portion of the data from the .csv file, 
+        continuous patient measurement signal0 divided into equal intervals
+        
+        sig2 {list of np.array of float} -- portion of the data from the .csv file, 
+        continuous patient measurement signal1 divided into equal intervals
+        
+        step {int} -- the beginning of photo numbering allows to divide data into 
+        individual processes in an appropriate way
+        
+        beat_type {str} -- heartbeat type name
         group_name {str} -- name of the group of heartbeat types
     """
     # sprawdzanie jaki to proces

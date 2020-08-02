@@ -1,0 +1,7 @@
+- wszystkie zdjęcia, w tym zmodyfikowany type_F ale tylko w test i val set
+
+- ustawione są wagi klas na 
+{'type_F': 5.33, 'type_N': 1.0, 'type_Q': 4.492, 'type_S': 5.902, 'type_V': 4.645}
+te wyniki to liczby po wzięcu liczby zdjęc klasy N i podzielieniu jej
+przez liczbę zdjęć danej klasy, potem zrobienie z tego log2 (ln),
+to pozwoliło na lepsze nauczenie klas gdzie jest mało zdjęć
