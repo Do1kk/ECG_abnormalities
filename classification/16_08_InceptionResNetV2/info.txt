@@ -1,0 +1,3 @@
+- użycie ciągłej transformaty falkowej zamias kroczącej transformaty fouriera, 
+jak widać uzyskano trochę lepsze wyniki
+- z plusów można wymienić że zdjęcia zajmują mniej (~700 MB, a wcześniej ~ 5GB)
