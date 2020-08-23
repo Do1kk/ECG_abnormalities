@@ -1,3 +1,8 @@
+"""
+Macierz pomyłek ale z możliwością ustawienia zakresu koloru, przydatne gdy 
+liczba danych w konkretnych klasach jest zróżnicowana.
+"""
+
 import seaborn as sn
 import pandas as pd
 import matplotlib.pyplot as plt

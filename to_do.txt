@@ -1,36 +1,22 @@
 - może testy jakieś wprowadzić, tak jak jest w książce na przykład
 
 - stworzyć jakieś bardziej uogólnione wczytywanie wyszukiwanie QRS, te co teraz jest 
-bazuje na bazie MIT-BIH
-
-- uzyc "Batch Norm" na kilku warstwach, przyspieszy uczenie ale da tez troche zakłuceń(to dobrze bo bedzie
-wieksze val_acc)
-
-- stworzyć optymalizator do kodu uczącego (keras itp) by zoptymalizować hiperparametry,
-może rzeby dobierał jakieś i sprawdzał wyniki, może randomowo i zapisywał te najlepsze wyniki
-
-- to chyba nie jest wydajne, 
-        data = []
-        data.append(np.array(all_data[:data_per_proc]))
-        data.append(np.array(all_data[data_per_proc : data_per_proc * 2]))
-        data.append(np.array(all_data[data_per_proc * 2 :]))
-
-- poprawić sig_display.py
-
-- zrobić coś z tym by nie przetwarzał pliku z którego pobiera zmienną
-
-- zrobić jakiś program jak sig_dispaly ale żeby pokazywał jakie grupy i jakie typy do nich należą,
-by można było wizualnie zauważyć podobieństaw tych typów w danej grupie
+bazuje na zapisie typu MIT
 
 - tam w images zmienić type_... na group_... by nie myliło się z typami arytmii
 
 - można by było zrobić jakąś obsługę błędów, np. gdy robię zdjęcie z 2 sygnałów by sprawdzało
 czy licza wycinków się zgadza (musi być taka sama dla signal1 i signal2)
 
+##########################################################
+- stworzyć optymalizator do kodu uczącego (keras itp) by zoptymalizować hiperparametry,
+może rzeby dobierał jakieś i sprawdzał wyniki
+
 - coś zrobić żeby na przykład w nazwie modelu który jest zapisywany była liczba przeprowadzonych epoch,
 pozwolało by to później jakoś zidentyfikować zmiany modelu
 
-##########################################################
+- zrobić coś z tym by nie przetwarzał pliku z którego pobiera zmienną
+
 - zmiana podzielenia na 0.6, 0.2, 0.2
 
 - zrobić wszystko na danych prócz tych 15% testowych type_F i jak już zdjęcia zostaną podzielone

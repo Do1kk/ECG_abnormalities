@@ -11,10 +11,9 @@ TensorFlow + Keras
 1. csv_ann_type.py
 2. mod_csv_ann.py
 3. png_spec.py (przed tym usunąć pliki z "rejected_type_N", "train_val_test")
-<!-- 4. file_move.py -->
-5. image_split.py
-6. wstawienie spakowanych zdjęć (.zip) na dysk
-7. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
+4. image_split.py
+5. wstawienie spakowanych zdjęć (.zip) na dysk
+6. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
 
 # Opis programów
 
@@ -31,16 +30,20 @@ i stworzyć nowe wycinki, stworzony w celu zwiększenia ilości zdjęć spektrog
 png_spec.py - tworzenie spektrogramów i zapisywanie ich jako zdjęcia o rozmiarach 220x220 RGB, 
 robione jest to tylko dla wygranych (z dużą ilością przedziałów) typów bicia serca;
 
-sig_display.py - wyświetlenie subplotów na potrzeby pokazania i zobaczenia jak to wygląda, 
-zdjęcia spektrogramów oraz nie przetworzone przebiegi po wycięciu przedziałów;
-
 image_split.py - pozwala na podzielenie zdjęć na sety (train/dev/test) do późniejszego trenowania sieci 
 neuronowej;
 
-file_move.py - przenosi nadmiar zdjęć grupy N, zostawiając tylko 9k zdjęć (po 3k z każdego typu 
+### OLD/
+
+macierz_pomylek.py - Macierz pomyłek ale z możliwością ustawienia zakresu koloru, przydatne gdy 
+liczba danych w konkretnych klasach jest zróżnicowana;
+
+file_move.py - Przenosi nadmiar zdjęć grupy N, zostawiając tylko 9k zdjęć (po 3k z każdego typu 
 należącego do tej grupy);
 
-### OLD/
+sig_display.py - wyświetlenie subplotów na potrzeby pokazania i zobaczenia jak to wygląda, 
+zdjęcia spektrogramów oraz nie przetworzone przebiegi po wycięciu przedziałów;
+
 load_data_train_test.py - tworzenie plików z powstałych wcześniej zdjęć spektrogramów: X_train_test.npz 
 i y_train_test.npz, są to pliki zkompresowane numpy, pozwalają znacząco zmniejszyć rozmiar danych 
 i nie ma już problemów z dużą ilością zdjęć oraz ich rozmiarem, w jednym pliku są dane treningowe i testowe;

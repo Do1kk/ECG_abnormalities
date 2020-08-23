@@ -1,5 +1,9 @@
-from png_spec import beat_ann_dict
+"""
+Wyświetlenie subplotów na potrzeby pokazania i zobaczenia jak to wygląda, 
+zdjęcia spektrogramów oraz nie przetworzone przebiegi po wycięciu przedziałów.
+"""
 
+from png_spec import beat_ann_dict
 from numpy import genfromtxt
 import matplotlib.pyplot as plt
 import imageio

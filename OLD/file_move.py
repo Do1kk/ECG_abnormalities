@@ -1,3 +1,7 @@
+"""
+Przenosi nadmiar zdjęć grupy N, zostawiając tylko 9k zdjęć (po 3k z każdego typu 
+należącego do tej grupy).
+"""
 import random
 import shutil
 import os
