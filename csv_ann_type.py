@@ -3,7 +3,7 @@ import numpy as np
 import csv
 
 
-def preprocessing(record_name, db_folder, beat_ann_dict, channel):
+def preprocessing(record_name, db_folder, beat_ann_dict, chan=0):
     """Reading the "channel" signal and preprocessing.
 
     Arguments:              
@@ -15,7 +15,7 @@ def preprocessing(record_name, db_folder, beat_ann_dict, channel):
         indx_sym_dict {dict of int and str} -- dict of peak heart points and their corresponding types of heartbeat
         signal {float} -- continuous patient measurement signal (digital signal sampled 360 Hz)
     """
-    sig, fields = wfdb.rdsamp(db_folder + record_name, channels=[channel])
+    sig, fields = wfdb.rdsamp(db_folder + record_name, channels=[chan])
     signal = np.concatenate(sig.tolist(), axis=0)
     ann_ref = wfdb.rdann(db_folder + record_name, "atr")
     qrs_indx = ann_ref.sample
@@ -33,7 +33,7 @@ def preprocessing(record_name, db_folder, beat_ann_dict, channel):
 
 
 def creating_csv(
-    indx_sym_dict, beat_ann_dict, signal, csv_folder, L_side, R_side, channel=""
+    indx_sym_dict, beat_ann_dict, signal, csv_folder, L_side, R_side, sig_num=""
 ):
     """Creating .csv file.
 
@@ -46,7 +46,7 @@ def creating_csv(
         R_side {int} -- signal length right of the main hill
     """
     for k, v in indx_sym_dict.items():
-        file_name = "type_" + beat_ann_dict[v] + channel
+        file_name = "type_" + beat_ann_dict[v] + sig_num
         with open(csv_folder + file_name + ".csv", "a", newline="") as csv_file:
             writer = csv.writer(
                 csv_file, delimiter=";", quotechar='"', quoting=csv.QUOTE_MINIMAL
@@ -58,11 +58,11 @@ record_names = "mit-bih/RECORDS"
 db_folder = "mit-bih/"
 csv_folder = "csv_type_files/"
 range_len = 260
-shift = 25  # przesunięcie środka
+shift = 25  # Shift of the center, i.e. the place of the R wave.
 L_side = int(range_len / 2) - shift
 R_side = int(range_len / 2) + shift
 
-beat_ann = (  # ilość
+beat_ann = (
     "N",  # Normal beat.                                                    # 74984
     "L",  # Left bundle branch block beat.                                  # 8069
     "R",  # Right bundle branch block beat.                                 # 7250
@@ -77,10 +77,7 @@ beat_ann = (  # ilość
     "E",  # Ventricular escape beat.                                        # 106
     "/",  # Paced beat.                                                     # 7020
     "f",  # Fusion of paced and normal beat.                                # 982
-    "Q",  # Unclassifiable beat.
-    # "n",
-    # "x",  # Opisany jako "p" na stronie bazy danych: "Non-conducted P-wave (blocked APB)" bloced Atrial premature beat, czyli podobny do "A"
-    # "!",  # Opisany jako "!" na stronie bazy danych: "Ventricular flutter wave"
+    "Q",  # Unclassifiable beat.                                            # 33
 )
 
 # Nazwy przypisane, głównie ze względu na niemożność stworzenia katalogów o nazwie "/" czy z
@@ -113,6 +110,8 @@ if __name__ == "__main__":
         file_name = "type_" + f_name
         with open(csv_folder + file_name + ".csv", "w") as csv_file:
             csv_file.write("")
+        with open(csv_folder + file_name + "2.csv", "w") as csv_file:
+            csv_file.write("")
 
     # Reading all record names from the file and create csv files.
     with open(record_names) as file:
@@ -120,14 +119,14 @@ if __name__ == "__main__":
             record_name = str(line.strip())
             # Signal 1
             indx_sym_dict, signal1 = preprocessing(
-                record_name, db_folder, beat_ann_dict, channel=0
+                record_name, db_folder, beat_ann_dict, chan=0,
             )
             creating_csv(
-                indx_sym_dict, beat_ann_dict, signal1, csv_folder, L_side, R_side
+                indx_sym_dict, beat_ann_dict, signal1, csv_folder, L_side, R_side,
             )
             # Signal 2
             indx_sym_dict, signal2 = preprocessing(
-                record_name, db_folder, beat_ann_dict, channel=1
+                record_name, db_folder, beat_ann_dict, chan=1,
             )
             creating_csv(
                 indx_sym_dict,
@@ -136,7 +135,7 @@ if __name__ == "__main__":
                 csv_folder,
                 L_side,
                 R_side,
-                channel="2",
+                sig_num="2",
             )
 
             # print(f"signal shape: {signal.shape}")
