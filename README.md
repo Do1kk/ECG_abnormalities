@@ -11,7 +11,6 @@ TensorFlow + Keras
 1. csv_ann_type.py
 2. mod_csv_ann.py
 3. png_spec.py 
-(usunąć pliki z "train_val_test")
 4. image_split.py
 5. wstawienie spakowanych zdjęć (.zip) na dysk
 6. podłączenie dyku w colab i uruchomienie pliku z folderu /classification
