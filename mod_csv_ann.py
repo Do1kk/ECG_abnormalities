@@ -3,7 +3,7 @@ import csv
 import random
 from scipy.interpolate import interp1d
 from image_split import test_ratio
-from csv_ann_type import csv_folder, range_len, L_side, R_side
+from csv_ann_type import csv_folder, range_len, L_side
 
 
 # Creating empty csv files.
@@ -20,8 +20,9 @@ def read_csv_file(file_dir):
     return data
 
 
-def overwrite_csv_file(file_dir, data):
-    with open(file_dir, "w", newline="") as csv_file:
+# Append or Overwrite data to CSV files.
+def modification_csv_file(file_dir, data, mode="a"):
+    with open(file_dir, mode, newline="") as csv_file:
         writer = csv.writer(
             csv_file, delimiter=";", quotechar='"', quoting=csv.QUOTE_MINIMAL
         )
@@ -29,42 +30,27 @@ def overwrite_csv_file(file_dir, data):
             writer.writerow(d)
 
 
-# Dopisywanie danych do plików już po zmodyfikowaniu.
-def append_mod_data(mod_file_dir, mod_data):
-    with open(mod_file_dir, "a", newline="") as csv_file:
-        writer = csv.writer(
-            csv_file, delimiter=";", quotechar='"', quoting=csv.QUOTE_MINIMAL
-        )
-        for data in mod_data:
-            writer.writerow(data)
-
-
-# Usunąć stąd test_data, po zrobieniu zdjęć, zostaną przeniesione przed podzieleniem.
-# Odczytanie danych i oddzielenie danych na zbiór testowy by móc je później przetworzyć.
+# Reading data and separating some of them into a test set to be able to
+# process them later.
 def read_and_split_data(file_dir1, file_dir2, test_ratio):
     data1 = read_csv_file(file_dir1)
     data2 = read_csv_file(file_dir2)
 
-    # Złącznie danych przed przetasowaniem by pierwszy odpowiadał sygnałowi drugiemu.
     temp_data = list(zip(data1, data2))
     random.shuffle(temp_data)
     data1, data2 = zip(*temp_data)
 
-    overwrite_csv_file(file_dir1, data1)
-    overwrite_csv_file(file_dir2, data2)
-
+    modification_csv_file(file_dir1, data1, mode="w")  # Overwrite csv file.
+    modification_csv_file(file_dir2, data2, mode="w")  # Overwrite csv file.
     data_from_csv1 = np.array(data1, dtype=np.float16)[int(test_ratio * len(data1)) :]
     data_from_csv2 = np.array(data2, dtype=np.float16)[int(test_ratio * len(data2)) :]
 
     return data_from_csv1, data_from_csv2
 
 
-# Modyfikacja danych przy pomocy mnożenia przez wartość bliską jedynki.
-# Trzeba przerowbić dwa sygnały, ponieważ wygenerowana wartość powinna być
-# taka sama dla obu sygnałów.
-# Można to jakoś uogólnić *args czy coś, by rozumiał ile dostaje argumentów
-# i tyle ich funkcja zwracała.
-def first_metod_data_modification(data_from_csv1, data_from_csv2):
+# Data modification by multiplying by a value close to one,
+# generated value should be the same for both signals.
+def first_method_data_modification(data_from_csv1, data_from_csv2):
     mod_data1 = []
     mod_data2 = []
     for i in range(len(data_from_csv1)):
@@ -75,9 +61,9 @@ def first_metod_data_modification(data_from_csv1, data_from_csv2):
     return np.array(mod_data1, dtype=np.float16), np.array(mod_data2, dtype=np.float16)
 
 
-# Modyfikacja danych przy pomocy skracania obustronnego, niestety nie przedłużam
-# bo wymagało by to użycia sygnału z przebiegu, a nie edycji danych z pliku csv.
-def second_metod_data_modification(mod_data1, mod_data2):
+# Modification data with double-sided shortening, unfortunately I do not
+# extend it because this would require use of a signal from the waveform.
+def second_method_data_modification(mod_data1, mod_data2):
     mod_data1_temp = []
     mod_data2_temp = []
     for i in range(len(mod_data1)):
@@ -90,8 +76,7 @@ def second_metod_data_modification(mod_data1, mod_data2):
         y1 = y1[num_L:-num_R]
         y2 = y2[num_L:-num_R]
 
-        dlugosc = len(y1)
-        x = np.linspace(0, dlugosc, num=dlugosc)
+        x = np.linspace(0, len(y1), num=len(y1))
         x_new = np.linspace(x.min(), x.max(), range_len)
 
         f1 = interp1d(x, y1, kind="linear")
@@ -108,7 +93,7 @@ def second_metod_data_modification(mod_data1, mod_data2):
 
 
 data_mult = 5
-symbol = "F"  # Fusion of ventricular and normal beat. Ilość: 802
+symbol = "F"  # Fusion of ventricular and normal beat. Quantity: 802.
 f_name = "F"
 
 file1_dir = csv_folder + "type_" + f_name + ".csv"
@@ -121,10 +106,13 @@ empty_csv_file(mod_file2_dir)
 
 data_from_csv1, data_from_csv2 = read_and_split_data(file1_dir, file2_dir, test_ratio)
 
-# Powielenie danych, data_mult - 1 kopii zmodyfikowanych.
+# Duplicate data.
+# (data_mult - 1) <- number of modified copies for whole type_F set.
 for i in range(data_mult - 1):
-    mod_data1, mod_data2 = first_metod_data_modification(data_from_csv1, data_from_csv2)
-    mod_data1, mod_data2 = second_metod_data_modification(mod_data1, mod_data2)
+    mod_data1, mod_data2 = first_method_data_modification(
+        data_from_csv1, data_from_csv2
+    )
+    mod_data1, mod_data2 = second_method_data_modification(mod_data1, mod_data2)
 
-    append_mod_data(mod_file1_dir, mod_data1)
-    append_mod_data(mod_file2_dir, mod_data2)
+    modification_csv_file(mod_file1_dir, mod_data1, mode="a")  # Append mod data.
+    modification_csv_file(mod_file2_dir, mod_data2, mode="a")  # Append mod data.

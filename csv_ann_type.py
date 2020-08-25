@@ -9,11 +9,15 @@ def preprocessing(record_name, db_folder, beat_ann_dict, chan=0):
     Arguments:              
         record_name {str} -- path to the file that stores the name of all records
         db_folder {str} -- path to the folder that stores MIT-BIH database
-        beat_ann_dict {dict of str} -- dict of types of heartbeats and their corresponding folder names
+        beat_ann_dict {dict of str} -- dict of types of heartbeats and their
+        corresponding folder names
+        chan {int} -- number defining which signal in the record will be processed
 
     Returns:
-        indx_sym_dict {dict of int and str} -- dict of peak heart points and their corresponding types of heartbeat
-        signal {float} -- continuous patient measurement signal (digital signal sampled 360 Hz)
+        indx_sym_dict {dict of int and str} -- dict of peak heart points and
+        their corresponding types of heartbeat
+        signal {float} -- continuous patient measurement signal
+        (digital signal sampled 360 Hz)
     """
     sig, fields = wfdb.rdsamp(db_folder + record_name, channels=[chan])
     signal = np.concatenate(sig.tolist(), axis=0)
@@ -38,12 +42,16 @@ def creating_csv(
     """Creating .csv file.
 
     Arguments:
-        indx_sym_dict {dict of int and str} -- dict of peak heart points and their corresponding types of heartbeat
-        beat_ann_dict {dict of str} -- dict of types of heartbeats and their corresponding folder names
+        indx_sym_dict {dict of int and str} -- dict of peak heart points and
+        their corresponding types of heartbeat
+        beat_ann_dict {dict of str} -- dict of types of heartbeats and their
+        corresponding folder names
         signal {float} -- continuous patient measurement signal
         csv_folder {str} -- path to the folder that stores .csv files
         L_side {int} -- signal length left of the main hill
         R_side {int} -- signal length right of the main hill
+        sig_num {char} -- a number that allows the files to be named differently 
+        depending on the signal number in the record
     """
     for k, v in indx_sym_dict.items():
         file_name = "type_" + beat_ann_dict[v] + sig_num
@@ -63,6 +71,7 @@ L_side = int(range_len / 2) - shift
 R_side = int(range_len / 2) + shift
 
 beat_ann = (
+    #       Description.                                                    # Quantity
     "N",  # Normal beat.                                                    # 74984
     "L",  # Left bundle branch block beat.                                  # 8069
     "R",  # Right bundle branch block beat.                                 # 7250
@@ -80,8 +89,8 @@ beat_ann = (
     "Q",  # Unclassifiable beat.                                            # 33
 )
 
-# Nazwy przypisane, głównie ze względu na niemożność stworzenia katalogów o nazwie "/" czy z
-# rozróżnieniem małych i wielkich liter.
+# Assigned names, mainly due to the inability to create directories with
+# the name "/" or with the distinction of upper and lower case letters.
 beat_ann_file = (
     "N",
     "L",
@@ -98,9 +107,6 @@ beat_ann_file = (
     "Pe",
     "lF",
     "Q",
-    # "lN",
-    # "lX",
-    # "lV",
 )
 beat_ann_dict = dict(zip(beat_ann, beat_ann_file))
 
