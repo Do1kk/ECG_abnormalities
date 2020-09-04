@@ -62,8 +62,8 @@ def creating_csv(
             writer.writerow(signal[k - L_side : k + R_side])
 
 
-record_names = "mit-bih/RECORDS"
-db_folder = "mit-bih/"
+record_names = "data/RECORDS"
+db_folder = "data/"
 csv_folder = "csv_type_files/"
 range_len = 260
 shift = 25  # Shift of the center, i.e. the place of the R wave.
