@@ -152,16 +152,16 @@ train_val_test/
 rejected_type_N/
 
 # Some too big files in classification
-classification/16_06_AlexNet_użyty_AlexNet/CNN_AlexNet/
-classification/17_06_VGG-16/CNN_VGG-16/
-classification/18_06_ResNet50/CNN_ResNet50/
-classification/19_06_InceptionResNetV2/CNN_InceptionResNetV2/
-classification/21_07_model_wlasny/CNN_model_wlasny/
-classification/23_07_Xception/CNN_xception/
-classification/26_07_Xception/CNN_xception/
-classification/26_07_Xception_2/CNN_xception/
-classification/02_08_InceptionResNetV2/CNN_InceptionResNetV2/
-classification/16_08_InceptionResNetV2/CNN_InceptionResNetV2/
+notebooks/16_06_AlexNet_użyty_AlexNet/CNN_AlexNet/
+notebooks/17_06_VGG-16/CNN_VGG-16/
+notebooks/18_06_ResNet50/CNN_ResNet50/
+notebooks/19_06_InceptionResNetV2/CNN_InceptionResNetV2/
+notebooks/21_07_model_wlasny/CNN_model_wlasny/
+notebooks/23_07_Xception/CNN_xception/
+notebooks/26_07_Xception/CNN_xception/
+notebooks/26_07_Xception_2/CNN_xception/
+notebooks/02_08_InceptionResNetV2/CNN_InceptionResNetV2/
+notebooks/16_08_InceptionResNetV2/CNN_InceptionResNetV2/
 
 # Temporary location for image from type_F
 test_type_F/
