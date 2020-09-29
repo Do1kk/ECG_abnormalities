@@ -1,0 +1,7 @@
+- dodać główną tabele w readme by wyło widać wyniki wgl;
+- wspomnieć że lepsze wyniki są gdy użyje się trnasformaty falkowej;
+- zrobić GUI;
+- stworzyć jakiś MAKE by wszystko robiło się od początku do końca;
+
+##zrobione##
+
