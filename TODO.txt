@@ -2,7 +2,8 @@
 - wspomnieć że lepsze wyniki są gdy użyje się trnasformaty falkowej;
 - zrobić GUI;
 - stworzyć jakiś MAKE by wszystko robiło się od początku do końca;
-- zmienić by można było kożystać z colaba zdalnie (czyli w vs code)
+- zmienić by można było kożystać z colaba zdalnie (czyli w vs code);
+- wypróbować autokeras;
 
 ##zrobione##
 
