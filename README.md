@@ -14,7 +14,7 @@ TensorFlow + Keras
 6. podłączenie dysku w "Colab" i uruchomienie najnowszego Jupyter Notebook z folderu /classification
 
 # Wyniki
-![Alt text](images/wyniki.png?raw=true "wyniki.png"
+![Alt text](images/wyniki.png?raw=true "wyniki.png")
 
 # Opis programów
 
