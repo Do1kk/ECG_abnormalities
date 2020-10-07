@@ -1,6 +1,7 @@
 import wfdb
 import numpy as np
 import csv
+import os
 
 
 def preprocessing(record_name, db_folder, beat_ann_dict, chan=0):
@@ -111,6 +112,9 @@ beat_ann_file = (
 beat_ann_dict = dict(zip(beat_ann, beat_ann_file))
 
 if __name__ == "__main__":
+    # Create folder if it doesn't exist.
+    if not os.path.isdir(csv_folder):
+        os.makedirs(csv_folder)
     # Creating empty csv files.
     for symbol, f_name in beat_ann_dict.items():
         file_name = "type_" + f_name

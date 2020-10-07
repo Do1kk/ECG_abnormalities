@@ -136,6 +136,7 @@ csv_files/
 csv_type_files/
 
 # Images to train/dev/test
+images/
 OLD/OLD_images/
 
 # VS code files

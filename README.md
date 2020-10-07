@@ -6,15 +6,18 @@ Wykorzystanie bazy przebiegów arytmii MIT-BIH.
 TensorFlow + Keras
 
 # Kolejność uruchamiania
-1. csv_ann_type.py
-2. mod_csv_ann.py
-3. png_spec.py 
-4. image_split.py
+Zainstalować niezbędne biblioteki z requirements.txt
+Wystarczy użyć "make".
+    1. csv_ann_type.py
+    2. mod_csv_ann.py
+    3. png_spec.py 
+    4. image_split.py
 5. wstawienie spakowanych zdjęć (.zip) na "Google Drive"
 6. podłączenie dysku w "Colab" i uruchomienie najnowszego Jupyter Notebook z folderu /classification
 
 # Wyniki
-![Alt text](images/wyniki.png?raw=true "wyniki.png")
+Tabela 1. Wyniki dotyczą prac, które implementują grupowanie AMII oraz wykorzystują wyłącznie bazę danych arytmii MIT-BIH.
+![Alt text](results/wyniki.png?raw=true "wyniki.png")
 
 [13] S. Chen, W. Hua, Z. Li, J. Li and X. Gao, “Heartbeat classification using projected and dynamic features of ECG signal,” Biomedical Signal Processing and Control, pp. 165-173, 2017.
 
@@ -33,6 +36,8 @@ TensorFlow + Keras
 [40] S. M. Mathews, C. Kambhamettu and K. E. Barner, “A novel application of deep learning for single-lead ECG classification,” Computers in Biology and Medicine, pp. 53-62, 2018.
 
 [41] K. N. V. P. S. Rajesh and R. Dhuli, “Classification of imbalanced ECG beats using re-sampling techniques and AdaBoost ensemble classifier,” Biomedical Signal Processing and Control, p. 242–254, 2018.
+
+Trochę lepsze wyniki niż przedstawione w tabeli można uzyskać dzięki zastosowaniu transformaty falkowej podczas ekstrakcji cech. Wykorzystanie jednak tego kroku wydłuża w znacznym stopniu czas przetwarzania danych. Metoda ta została zaimplementowana jako funkcja "save_image2" w pliku "png_spec.py".
 
 # Opis programów
 

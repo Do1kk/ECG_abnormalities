@@ -1,4 +1,4 @@
-import split_folders
+import splitfolders
 import shutil
 import os
 import csv
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     ]
     files_move(test_files, im_group_F, test_im_group_F)
     # The division of data into three sets: training, validation and test.
-    split_folders.ratio(
+    splitfolders.ratio(
         input_folder,
         output=output_folder,
         seed=43,
