@@ -1,7 +1,7 @@
 # Opis projektu
 Metoda klasyfikacji cykli pracy serca wykorzystująca spektrogram wielosygnałowego zapisu EKG oraz sieci konwolucyjne z blokami rezydualnymi
 
-Wykorzystanie bazy przebiegów arytmii MIT-BIH.
+Wykorzystanie bazy arytmii MIT-BIH.
 
 TensorFlow + Keras
 
