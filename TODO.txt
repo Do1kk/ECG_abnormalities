@@ -1,4 +1,4 @@
-- zrobić GUI;
+- zrobić GUI, jeśli już to do kolejnych etapów przetwarzania danych, czyli zamiast "make";
 - wypróbować autokeras;
 
 ##zrobione##
