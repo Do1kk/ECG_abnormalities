@@ -3,3 +3,4 @@ run:
 	python mod_csv_ann.py
 	python png_spec.py
 	python image_split.py
+test
