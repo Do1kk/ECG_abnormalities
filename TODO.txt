@@ -1,4 +1,3 @@
-- zmienić by można było kożystać z colaba zdalnie (czyli w vs code);
 - zrobić GUI;
 - wypróbować autokeras;
 
