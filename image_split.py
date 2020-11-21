@@ -1,8 +1,8 @@
-import splitfolders
 import shutil
 import os
+
+import splitfolders
 import csv
-import shutil
 from csv_ann_type import csv_folder
 
 

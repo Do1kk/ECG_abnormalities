@@ -1,7 +1,8 @@
+import os
+
 import wfdb
 import numpy as np
 import csv
-import os
 
 
 def preprocessing(record_name, db_folder, beat_ann_dict, chan=0):
