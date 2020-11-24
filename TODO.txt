@@ -1,7 +1,12 @@
-- połączyć brancze GUI i master, zostawić make i gui, będą dwie drogi by wykonać kod;
+- spróbować zrobić testy do rzeczy które są w if __name__ .. w 
+csv_ann_type.py ale chyba tego nie można pokryć testami :/;
+- zastanawiam się jak testować złożoną funkcję (np preprocessing),
+możliwe że jest za bardzo złożona i powinienem ją zamienić na jakąś 
+klasę z kilkoma metodami;
 - wypróbować autokeras;
 
 ##zrobione##
+- połączyć brancze GUI i master, zostawić make i gui, będą dwie drogi by wykonać kod;
 - zrobić GUI, jeśli już to do kolejnych etapów przetwarzania danych, czyli zamiast "make";
 - stworzyć jakiś MAKE by wszystko robiło się od początku do końca;
 - folder nie jest zapisywany w github ani tworzony na początku;

@@ -3,23 +3,21 @@ import os
 import sys
 
 sys.path.insert(1, os.path.join(sys.path[0], ".."))  # Change dir to parent.
-from csv_ann_type import csv_folder
+import csv_ann_type
 
 
-class TestStringMethods(unittest.TestCase):
-    def test_upper(self):
-        self.assertEqual("foo".upper(), "FOO")
+class TestMethods(unittest.TestCase):
+    def test_one_beat_len(self):
+        self.assertEqual(csv_ann_type.range_len, 260)
 
-    def test_isupper(self):
-        self.assertTrue("FOO".isupper())
-        self.assertFalse("Foo".isupper())
+    def test_is_shift_used(self):
+        self.assertLess(csv_ann_type.L_side, csv_ann_type.R_side)
 
-    def test_split(self):
-        s = "hello world"
-        self.assertEqual(s.split(), ["hello", "world"])
-        # check that s.split fails when the separator is not a string
-        with self.assertRaises(TypeError):
-            s.split(2)
+    def test_every_type_of_beat(self):
+        self.assertCountEqual(list(csv_ann_type.beat_ann), list("NLRAaJSVFejE/fQ"))
+
+    def test_sign_not_good_to_name_file(self):
+        self.assertNotIn("/", csv_ann_type.beat_ann_file)
 
 
 if __name__ == "__main__":
