@@ -6,7 +6,14 @@ import csv
 from csv_ann_type import csv_folder
 
 
-def files_move(files, dir_from, dir_to):
+def move_files(files, dir_from, dir_to):
+    """Moves files between directories.
+
+    Arguments:
+        files {list of str} -- list of files names to move
+        dir_from {str} -- path to the original folder
+        dir_to {str} -- path to the destination folder
+    """
     for name in files:
         shutil.move(dir_from + name, dir_to + name)
     print(f"Moved {len(files)} files from directory: {dir_from} to: {dir_to}.")
@@ -42,7 +49,7 @@ if __name__ == "__main__":
     test_files = [
         f for f in os.listdir(im_group_F) if f[-8:-5] != "mod" and int(f[:-5]) < length
     ]
-    files_move(test_files, im_group_F, test_im_group_F)
+    move_files(test_files, im_group_F, test_im_group_F)
     # The division of data into three sets: training, validation and test.
     splitfolders.ratio(
         input_folder,
@@ -55,13 +62,13 @@ if __name__ == "__main__":
     split_val = int(len(files) * val_ratio / train_ratio)
     train_files = files[split_val:]
     val_files = files[:split_val]
-    files_move(train_files, test_split_group_F, train_split_group_F)
-    files_move(val_files, test_split_group_F, val_split_group_F)
+    move_files(train_files, test_split_group_F, train_split_group_F)
+    move_files(val_files, test_split_group_F, val_split_group_F)
     # Copy photos back to original directory.
     for name in test_files:
         shutil.copy(test_im_group_F + name, im_group_F + name)
     # Transfer not modified photos to the test set.
-    files_move(test_files, test_im_group_F, test_split_group_F)
+    move_files(test_files, test_im_group_F, test_split_group_F)
     # Delete folder temporary exists.
     if os.path.isdir(test_im_group_F):
         shutil.rmtree(test_im_group_F)
