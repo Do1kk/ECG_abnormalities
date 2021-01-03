@@ -9,7 +9,7 @@ import image_split
 class TestMethods(unittest.TestCase):
     pass
     # def test_one_beat_len(self):
-    #     self.assertEqual(image_split, 260)
+    #     self.assertEqual(image_split.move_files(), costam)
 
     # def test_is_shift_used(self):
     #     self.assertLess(csv_ann_type.L_side, csv_ann_type.R_side)
